@@ -1,0 +1,194 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{lmodern}
+
+%%%%%% TIKZ BIBLIOTHÈQUES %%%%%%
+\usepackage{tikz}
+\usetikzlibrary{3d}
+\usepackage{pgfplots}
+\usetikzlibrary{patterns}
+\usepackage[european resistor, european voltage, european current]{circuitikz}
+\usetikzlibrary{arrows,shapes,positioning}
+\usetikzlibrary{decorations.markings,decorations.pathmorphing,
+	decorations.pathreplacing}
+\usetikzlibrary{calc,patterns,shapes.geometric}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{matrix, calc, backgrounds, decorations.pathreplacing}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% GESTION DES RÉFÉRENCES %%%%%%
+\usepackage{caption}
+\usepackage{filecontents}
+\pgfplotsset{compat=newest}
+\usepackage{hyperref} % Crée des hyperliens pour le sommaire
+\hypersetup{pdfborder=0 0 0} % Cache les cadres rouges autour des hyperliens
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% PAGE DE COUVERTURE %%%
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+%%% GESTION DES FIGURES %%%
+\usepackage{float}      % Pour les figures à la place voulue UNIQUEMENT
+\usepackage{graphicx}   % Pour inclure des figures
+\usepackage{chngcntr}   % Bibli pour que la numérotation des figures dépende de la section
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{amsfonts}   % Ensemble mathématique
+\usepackage{amsmath}    % Environnement mathématique équation
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{tcolorbox} % box coloré
+\tcbuselibrary{skins} % Utilse pour faire Titres avancés: Personnaliser l'emplacement et l'apparence des titres des boîtes bien au-delà des capacités de base, comme dans l'exemple que je vous ai fourni, où le titre est placé en chevauchement sur le bord supérieur de la boîte.
+\usepackage{mdframed}   % Box Théorèmes et définitions
+\usepackage{xspace}     % Pour les redéfinitions de commandes
+\usepackage{makecell}   % Pour des retours à la ligne dans une ligne de tableau
+\usepackage{physics} % notation mathématique pour la physique 
+\usepackage{subcaption}
+
+%%% CONFIGURATION DE LA PAGE %%%
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{titlesec}
+
+
+%%% color %%%
+
+\definecolor{asparagus}{rgb}{0.53, 0.66, 0.42}
+\definecolor{carminered}{rgb}{1.0, 0.0, 0.22}
+\definecolor{darkpastelblue}{rgb}{0.47, 0.62, 0.8}
+\definecolor{darkgray}{rgb}{0.66, 0.66, 0.66}
+\definecolor{harvardcrimson}{rgb}{0.79, 0.0, 0.09}
+%%% CONFIGURATION prop / Th / Déf %%%
+
+\newcommand{\myprop}[2]{%
+	\begin{tcolorbox}[
+		enhanced,
+		colback=white,
+		colframe=darkpastelblue,
+		fonttitle=\bfseries,
+		title=Proposition: #1,
+		attach boxed title to top left={yshift=-2mm, xshift=0.5cm},
+		boxed title style={colback=darkpastelblue, size=small},
+		sharp corners=all
+		]
+		#2
+	\end{tcolorbox}
+}
+
+\newcommand{\myth}[2]{%
+	\begin{tcolorbox}[
+		enhanced,
+		colback=white,
+		colframe=harvardcrimson,
+		fonttitle=\bfseries,
+		title=Théorème: #1,
+		attach boxed title to top left={yshift=-2mm, xshift=0.5cm},
+		boxed title style={colback=harvardcrimson, size=small},
+		sharp corners=all
+		]
+		#2
+	\end{tcolorbox}
+}
+
+\newcommand{\mydef}[2]{%
+	\begin{tcolorbox}[
+		enhanced,
+		colback=white,
+		colframe=asparagus,
+		fonttitle=\bfseries,
+		title=Définition: #1,
+		attach boxed title to top left={yshift=-2mm, xshift=0.5cm},
+		boxed title style={colback=asparagus, size=small},
+		sharp corners=all
+		]
+		#2
+	\end{tcolorbox}
+}
+
+
+\newcommand{\mypostulat}[2]{%
+	\begin{tcolorbox}[
+		enhanced,
+		colback=white,
+		colframe=darkgray,
+		fonttitle=\bfseries,
+		title=Postulat: #1,
+		attach boxed title to top left={yshift=-2mm, xshift=0.5cm},
+		boxed title style={colback=darkgray, size=small},
+		sharp corners=all
+		]
+		#2
+	\end{tcolorbox}
+}
+\counterwithin{figure}{section} % Application de chngcntr pour que la numérotation des figures dépende de la section
+
+%%% CONFIGURATION DE LA PAGE %%%
+\geometry{
+	top=2cm,
+	bottom=2cm,
+	left=2cm,
+	right=2cm,
+	headheight=15pt,
+	includeheadfoot
+}
+
+
+% Configuration des en-têtes et des pieds de page
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.5pt}
+\fancyhead[L]{ \textbf{Résumé mécanique quantique}}
+
+
+\fancyfoot[C]{Polytech Clermont-Ferrand -- Mécanique quantique GP3A 2023-2024 \hspace{0.5cm} \textbf{\thepage}}
+
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\renewcommand{\headrulewidth}{0.4pt}
+	\fancyfoot[C]{Polytech Clermont-Ferrand -- Mécanique quantique GP3A 2023-2024 \hspace{0.5cm} \textbf{\thepage}}
+}
+
+
+\renewcommand{\footrule}{\hrulefill} % Dessine la barre horizontale
+
+% Configuration des titres de sections
+\titleformat{\section}[hang]{\normalfont\large\bfseries}{\thesection.}{0.5em}{}
+
+\setlength{\parskip}{0.5em}
+\title{Résumé Mécanique quantique}
+\author{\textup{Vincent MARAIS}}
+
+\newpage
+
+\begin{document}
+	
+	\input{Premier_page/Title.tex}
+	\tableofcontents
+	% Contenu du document
+\section{Postulats de la mécanique quantique}
+	
+Le TP consiste à analyser l'incidence de l'écrouissage sur les propriétés mécaniques de l'aluminium 1050 et du 2017, notamment la traction, la limite d'élasticité et d'autres caractéristiques mécaniques. Des tests de traction et de dureté seront réalisés sur des épaisseurs variées pour évaluer les conséquences de l'écrouissage.
+	
+
+
+\section{Outil mathématique pour la physique (OMP)}
+
+\subsubsection{title}
+Nous allons examiner comment les propriétés de l'aluminium 1050 évoluent en fonction du niveau d'écrouissage, mesuré par le taux de réduction après laminage.
+
+\vspace{0.2cm}
+
+	
+
+
+\section{Discussion}	
+Les différents points de la discussion doivent porter sur tout ou partie des résultats. La discussion doit apporter une plus value sur les résultats et apporter un regard critique. Chaque point de la discussion doit être justifié.
+	
+\section{Conclusion}	
+La conclusion reprend les points principaux des résultats et de la discussion.
+	
+
+\end{document}
