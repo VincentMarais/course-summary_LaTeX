@@ -1,12 +1,4 @@
-
-
-\documentclass{standalone}
-
-\usepackage{tikz}
-\usepackage{mathtools}
-\usetikzlibrary{arrows.meta}
-\begin{document}
-	\begin{tikzpicture}[line cap=round, line join=round, >=Triangle]
+\begin{tikzpicture}[line cap=round, line join=round, >=Triangle, scale=1.5]
 		\clip(-2.19,-2.49) rectangle (2.66,2.58);
 		\draw [shift={(0,0)}, lightgray, fill, fill opacity=0.1] (0,0) -- (56.7:0.4) arc (56.7:90.:0.4) -- cycle;
 		\draw [shift={(0,0)}, lightgray, fill, fill opacity=0.1] (0,0) -- (-135.7:0.4) arc (-135.7:-33.2:0.4) -- cycle;
@@ -28,5 +20,5 @@
 		\scriptsize
 		\draw [fill] (0,0) circle (1.5pt);
 		\draw [fill] (0.7,1.1) circle (0.5pt);
-	\end{tikzpicture}
-\end{document}
+\end{tikzpicture}
+
