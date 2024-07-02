@@ -37,6 +37,10 @@
 \usepackage{fancyhdr}
 \usepackage{geometry}
 \usepackage{titlesec}
+\usepackage{tocloft} % package to adjust the appearance of the table of contents.
+\usepackage{lipsum} % for sample text
+\usepackage{glossaries}
+
 \usepackage{amsfonts}   % Ensemble mathématique
 \usepackage{amsmath}    % Environnement mathématique équation
 \usepackage{tabularx}
@@ -59,6 +63,36 @@
 \usepackage{systeme}
 \usepackage{palatino} %%% style of the Latex
 \usepackage{lastpage} 
+
+%%% Section
+
+% Customize the table of contents title
+\titleformat{\section}
+{\huge\bfseries} % Format for the section title
+{}               % No section number
+{0pt}            % Space between section number and title
+{}
+
+
+%%%
+% Redefine the abstract environment
+\makeatletter
+\renewenvironment{abstract}{
+    \if@twocolumn
+      \section*{\abstractname}%
+    \else
+      \begin{center}%
+        {\Huge\bfseries \leftline{\abstractname\vspace{-1em}}\vspace{0.3em}}%
+      \end{center}%
+	  \noindent
+
+    \fi}
+    {\if@twocolumn\else\endquotation\fi}
+\makeatother
+%%% Redefine the Contents
+\renewcommand{\contentsname}{\Huge Contents}
+
+\input{second_part/glossary.tex}
 
 %%% color %%%
 
@@ -129,7 +163,13 @@
 	% Contenu du document
 \section{Section 1}
 	
+The \Gls{latex} typesetting markup language is specially suitable 
+for documents that include \gls{maths}. \Glspl{formula} are rendered 
+properly an easily once one gets used to the commands.
 
+\clearpage
+
+\printglossary
 
 
 
