@@ -3,7 +3,6 @@ build/*
 *.fmt
 *.zip
 
-*.pdf
 !*/testfiles/*.pdf
 !/discussionpapers/*.pdf
 
