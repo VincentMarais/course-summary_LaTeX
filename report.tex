@@ -64,14 +64,15 @@
 \usepackage{palatino} %%% style of the Latex
 \usepackage{lastpage} 
 
-%%% Section
 
-% Customize the table of contents title
-\titleformat{\section}
-{\huge\bfseries} % Format for the section title
-{}               % No section number
-{0pt}            % Space between section number and title
-{}
+%%% Section
+\newcommand{\hugetext}[1]{%
+  \begin{flushleft}
+    {\huge \textbf{#1}}
+  \end{flushleft}
+}
+
+
 
 
 %%%
@@ -90,9 +91,7 @@
     {\if@twocolumn\else\endquotation\fi}
 \makeatother
 %%% Redefine the Contents
-\renewcommand{\contentsname}{\Huge Contents}
 
-\input{second_part/glossary.tex}
 
 %%% color %%%
 
@@ -108,7 +107,6 @@
 
 
 
-\counterwithin{figure}{section} % Application de chngcntr pour que la numérotation des figures dépende de la section
 
 %%% CONFIGURATION DE LA PAGE %%%
 \geometry{
@@ -121,27 +119,45 @@
 }
 
 
-% Configuration des en-têtes et des pieds de page
-\pagestyle{fancy}
-\fancyhf{}
-\renewcommand{\headrulewidth}{0.5pt}
-\fancyhead[L]{ \textbf{Quantum information}}
+% Define the total number of pages in Roman and Arabic
+\newcounter{romanpages}
+\setcounter{romanpages}{2} % Set this to the actual number of Roman numeral pages
 
-\fancyfoot[L]{\textbf{page \thepage} / \textcolor{blue}{\textbf{\pageref{LastPage}}}} % Page number on the left
-\fancyfoot[R]{{Internship USACH - Quantum information}} % Custom text on the right
+\newcounter{arabicpages}
+\setcounter{arabicpages}{2} % Set this to the actual number of Arabic numeral pages
 
-
-\fancypagestyle{plain}{
+% Define Roman page style
+\fancypagestyle{romanstyle}{
 	\fancyhf{}
-	\renewcommand{\headrulewidth}{0.4pt}
-	\fancyfoot[C]{\textbf{\thepage} \hspace{1cm} Intership USACH}
+	\renewcommand{\headrulewidth}{0.5pt}
+	\fancyhead[L]{\textbf{Quantum information}}
+	\fancyfoot[L]{\textbf{page \thepage} / \textcolor{blue}{\textbf{\Roman{romanpages}}}} % Page number on the left
+	\fancyfoot[R]{{Internship USACH - Quantum information}} % Custom text on the right
 }
 
+% Define Arabic page style
+\fancypagestyle{arabicstyle}{
+	\fancyhf{}
 
-\renewcommand{\footrule}{\hrulefill} % Dessine la barre horizontale
+	\renewcommand{\headrulewidth}{0.5pt}
+	\fancyhead[L]{\textbf{Quantum information}}
+	\fancyfoot[L]{\textbf{page \thepage} / \textcolor{blue}{\textbf{\arabic{arabicpages}}}} % Page number on the left
+	\fancyfoot[R]{{Internship USACH - Quantum information}} % Custom text on the right
+}
+
+% Plain page style
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\renewcommand{\headrulewidth}{0.5pt}
+	\fancyhead[L]{\textbf{Quantum information}}
+	\fancyfoot[L]{\textbf{page \thepage} / \textcolor{blue}{\textbf{\Roman{romanpages}}}} % Page number on the left
+	\fancyfoot[R]{{Internship USACH - Quantum information}} % Custom text on the right
+}
+
+\renewcommand{\footrule}{\hrulefill} % Draw horizontal line
 
 % Configuration des titres de sections
-\titleformat{\section}[hang]{\normalfont\large\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\section}[hang]{\normalfont\huge\bfseries}{\thesection.}{0.5em}{}
 
 \setlength{\parskip}{0.5em}
 \title{Quantum information}
@@ -156,21 +172,32 @@
 
 \newpage
 
-\input{second_part/part.tex}
+\input{formal_part/part.tex}
+
 
 
 \newpage
-	% Contenu du document
-\section{Section 1}
+\pagestyle{arabicstyle}
+\pagenumbering{arabic}
+\section{Introduction}
+\lipsum[2-4] % replace with your introduction content
+
+
+
+\newpage
 	
 The \Gls{latex} typesetting markup language is specially suitable 
 for documents that include \gls{maths}. \Glspl{formula} are rendered 
 properly an easily once one gets used to the commands.
 
-\clearpage
+\section{fefezfezf}
 
-\printglossary
+efzef
+\newpage 
 
+ezfze
+\newpage 
 
+ezfzef
 
 \end{document}
