@@ -65,6 +65,9 @@
 \usepackage{lastpage} 
 
 
+
+
+
 %%% Section
 \newcommand{\hugetext}[1]{%
   \begin{flushleft}
@@ -103,6 +106,8 @@
 
 
 %%%%CONFIG MATHS EQUATIONS
+\usepackage{ mathrsfs } % FOR the H of the Hamiltionan
+
 \input{env/math.tex}
 
 
@@ -121,10 +126,10 @@
 
 % Define the total number of pages in Roman and Arabic
 \newcounter{romanpages}
-\setcounter{romanpages}{2} % Set this to the actual number of Roman numeral pages
+\setcounter{romanpages}{5} % Set this to the actual number of Roman numeral pages
 
 \newcounter{arabicpages}
-\setcounter{arabicpages}{2} % Set this to the actual number of Arabic numeral pages
+\setcounter{arabicpages}{20} % Set this to the actual number of Arabic numeral pages
 
 % Define Roman page style
 \fancypagestyle{romanstyle}{
@@ -182,7 +187,10 @@
 \section{Introduction}
 \lipsum[2-4] % replace with your introduction content
 
-
+\begin{equation}
+	\hat{\mathscr{H}}_{XY} + 	\hat{\mathscr{H}}_{\Gamma} 
+	\hamil_{XY}
+\end{equation}
 
 \newpage
 	
