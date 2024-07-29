@@ -1,0 +1,82 @@
+
+
+
+
+
+
+
+\subsection{Model $\mathbf{XY-\Gamma}$}
+
+The XY-$\Gamma$ model is an extension of the one-dimensional XY spin-1/2 model, 
+incorporating an additional symmetric off-diagonal interaction term denoted by $\Gamma$. 
+The Hamiltonian of this model is given by:
+
+\begin{equation}
+	\mathcal{\hat{H}} = \mathcal{\hat{H}}_{XY} + \mathcal{\hat{H}}_{\Gamma},
+\end{equation}
+where
+\begin{equation}
+	\mathcal{\hat{H}}_{XY} = J \sum_{n=1}^L \left[ \left( \frac{1 + \delta}{2} \right) \sigma^x_n \sigma^x_{n+1} + \left( \frac{1 - \delta}{2} \right) \sigma^y_n \sigma^y_{n+1} \right] + h \sum_{n=1}^L \sigma^z_n,
+\end{equation}
+and
+\begin{equation}
+	\mathcal{\hat{H}}_{\Gamma} = \Gamma \sum_{n=1}^L \left( \sigma^x_n \sigma^y_{n+1} + \gamma \sigma^y_n \sigma^x_{n+1} \right).
+\end{equation}
+
+Here, $\sigma^x, \sigma^y, \sigma^z$ are the Pauli matrices, $J$ is the exchange constants, 
+$\delta$ is the anisotropy parameter, 
+$h$ is the strength of the transverse field, and 
+$\Gamma$ characterizes the amplitude of the off-diagonal exchange interactions with 
+$\gamma$ being the relative coefficient of these couplings.
+
+eff
+\subsection{Physical Interpretation}
+
+\subsubsection{Interactions and Terms}
+\begin{itemize}
+    \item \textbf{XY term} : $\hamil_{XY}$ describes the nearest-neighbor interactions along the 
+	$x$ and $y$ directions with anisotropy $\delta$ and a transverse magnetic field $h$.
+	\item \textbf{$\Gamma$ term or Dzyaloshinskii-Moriya interaction} :
+	 $\hamil_{\Gamma}$ introduces an additional interaction 
+	that mixes the $x$ and $y$ components of neighboring spins, breaking mirror symmetry (Because the particle at 
+	position $n$ does not have the same orientation of spin as the particle at position $n+1$, 
+	as represented by the term $\sigma^x_n \sigma^y_{n+1}$, where the particle at position $n$ has a spin oriented in the $x$ 
+	direction and the particle at position $n+1$ has a spin oriented in the $y$ direction.
+	).
+\end{itemize}
+
+\subsubsection{Magnetocrystalline anisotropy}
+Explaintion of the anisotropy term $\delta$  :
+
+Magnetocrystalline anisotropy arises from the crystalline structure of a material, influencing 
+the preferred direction of magnetization. This direction varies based on the material's lattice structure; 
+for example, iron with a cubic lattice favors the ±xyz directions, while nickel prefers diagonal directions. 
+The phenomenon is attributed to differing interaction strengths between neighboring lattice sites along various crystal planes. 
+In polycrystalline films, composed of randomly oriented small clusters, the average magnetocrystalline anisotropy is negligible. 
+Similarly, in amorphous films, where inter-atomic distances are random, this anisotropy can also be ignored.
+
+Paper : Magnetic Anisotropy
+Assistant: Yifan Zhou, +358-451345822
+
+\subsubsection{Phases of the Model}
+\begin{itemize}
+    \item \textbf{Ferromagnetic (FM) Phase}: Characterized by aligned spins, typically occurring at low transverse field strength $h$.
+    \item \textbf{Paramagnetic (PM) Phase}: Spins are disordered due to a strong transverse field.
+    \item \textbf{Spiral Phase}: Exhibits a quasi-long-range order, with spins forming a spiral pattern. This phase emerges due to the interplay between the XY interactions and the $\Gamma$ term.
+\end{itemize}
+
+\subsection{Information Propagation}
+\begin{itemize}
+    \item The $\Gamma$ interaction affects the way information spreads through the system. It creates an asymmetric "light-cone" structure with different propagation speeds (butterfly velocities) for information in different directions.
+    \item In the spiral phase, information propagates faster compared to the FM and PM phases, where the propagation is slower.
+\end{itemize}
+
+\subsection{Applications} 
+
+cf Paper Simulation of XY model in a quantum computer
+Author: Marc Farreras Bartra
+
+
+
+
+Paper ()
