@@ -65,7 +65,15 @@
 \usepackage{lastpage} 
 
 
-
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,     % Color for internal links (sections, equations, etc.)
+    urlcolor=magenta,       % Color for URLs
+    citecolor=red,    % Color for citations
+    filecolor=green   % Color for file links
+}
+\hypersetup{pdfborder=0 0 0} % Cache les cadres rouges autour des hyperliens
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%% Section
@@ -108,7 +116,7 @@
 %%%%CONFIG MATHS EQUATIONS
 \usepackage{ mathrsfs } % FOR the H of the Hamiltionan
 
-\input{env/math.tex}
+\input{env/command.tex}
 
 
 
@@ -201,4 +209,8 @@
 \section{Results And Discussion}
 \input{results_and_discussion.tex/results_and_discussion.tex}
 
+\newpage
+
+\bibliographystyle{plain}
+\bibliography{Intership_USACH.bib}
 \end{document}

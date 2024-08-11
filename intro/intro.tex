@@ -1,15 +1,45 @@
+Quantum entanglement, a fundamental feature of quantum mechanics, 
+was first recognized in the early 20th century by Einstein, 
+Podolsky, Rosen, and Schrödinger \cite{horodecki_quantum_2009}. This phenomenon describes 
+a situation where the quantum states of two or more particles 
+become intertwined, such that the state of one particle cannot 
+be described independently of the state of the other, 
+no matter the distance separating them. 
 
 
 
+Entanglement become a practical resource 
+in quantum information science, 
+underpinning technologies such as quantum cryptography \cite{pirandola_advances_2020}, 
+quantum teleportation \cite{bennett_teleporting_1993}, and quantum computing \cite{whitfield_quantum_2022}. 
+These applications exploit entanglement 
+to perform tasks that are impossible 
+with classical systems.
+
+Despite its utility, entanglement is a fragile and complex phenomenon, 
+challenging to detect and manipulate. 
+The study of entanglement involves understanding 
+its properties, methods for its detection, and 
+strategies for its quantification and manipulation. 
+These efforts are crucial for advancing our ability 
+to harness entanglement for practical applications, 
+ensuring that it can be effectively used as a resource
+in quantum communication and computation.
+
+The work presented here go will study the simplification of the Kitaev model call $XY-\Gamma$ model 
+because this model have a good futur to build a quantum computer (cf paper XY-Gamma for the ref about Kitaev) 
+I this model we will see how the entanglement propagate and quantify the entanglement.
+
+\subsection{Model XY-DMI}
+Introduction on the Heinsenberg model + 
+Introduction on the DMI + spin chain +qubits
 
 
 
+The XY-$\Gamma$ model \cite{kheiri_information_2024} or XY model is a devivative of the 
 
-\subsection{Model $\mathbf{XY-\Gamma}$}
+with a Dzyaloshinskii–Moriya interaction (DMI) \cite{moriya_anisotropic_1960,dzyaloshinsky_thermodynamic_1958} is one-dimentionel spin chain. 
 
-The XY-$\Gamma$ model is an extension of the one-dimensional XY spin-1/2 model, 
-incorporating an additional symmetric off-diagonal interaction term denoted by $\Gamma$. 
-The Hamiltonian of this model is given by:
 
 \begin{equation}
 	\mathcal{\hat{H}} = \mathcal{\hat{H}}_{XY} + \mathcal{\hat{H}}_{\Gamma},
@@ -26,13 +56,11 @@ and
 Here, $\sigma^x, \sigma^y, \sigma^z$ are the Pauli matrices, $J$ is the exchange constants, 
 $\delta$ is the anisotropy parameter, 
 $h$ is the strength of the transverse field, and 
-$\Gamma$ characterizes the amplitude of the off-diagonal exchange interactions with 
+$D$ characterizes the amplitude of the off-diagonal exchange interactions with 
 $\gamma$ being the relative coefficient of these couplings.
 
 eff
-\subsection{Physical Interpretation}
 
-\subsubsection{Interactions and Terms}
 \begin{itemize}
     \item \textbf{XY term} : $\hamil_{XY}$ describes the nearest-neighbor interactions along the 
 	$x$ and $y$ directions with anisotropy $\delta$ and a transverse magnetic field $h$.
@@ -45,38 +73,8 @@ eff
 	).
 \end{itemize}
 
-\subsubsection{Magnetocrystalline anisotropy}
-Explaintion of the anisotropy term $\delta$  :
-
-Magnetocrystalline anisotropy arises from the crystalline structure of a material, influencing 
-the preferred direction of magnetization. This direction varies based on the material's lattice structure; 
-for example, iron with a cubic lattice favors the ±xyz directions, while nickel prefers diagonal directions. 
-The phenomenon is attributed to differing interaction strengths between neighboring lattice sites along various crystal planes. 
-In polycrystalline films, composed of randomly oriented small clusters, the average magnetocrystalline anisotropy is negligible. 
-Similarly, in amorphous films, where inter-atomic distances are random, this anisotropy can also be ignored.
-
-Paper : Magnetic Anisotropy
-Assistant: Yifan Zhou, +358-451345822
-
-\subsubsection{Phases of the Model}
-\begin{itemize}
-    \item \textbf{Ferromagnetic (FM) Phase}: Characterized by aligned spins, typically occurring at low transverse field strength $h$.
-    \item \textbf{Paramagnetic (PM) Phase}: Spins are disordered due to a strong transverse field.
-    \item \textbf{Spiral Phase}: Exhibits a quasi-long-range order, with spins forming a spiral pattern. This phase emerges due to the interplay between the XY interactions and the $\Gamma$ term.
-\end{itemize}
-
-\subsection{Information Propagation}
-\begin{itemize}
-    \item The $\Gamma$ interaction affects the way information spreads through the system. It creates an asymmetric "light-cone" structure with different propagation speeds (butterfly velocities) for information in different directions.
-    \item In the spiral phase, information propagates faster compared to the FM and PM phases, where the propagation is slower.
-\end{itemize}
-
-\subsection{Applications} 
-
-cf Paper Simulation of XY model in a quantum computer
-Author: Marc Farreras Bartra
 
 
+\subsection{Entanglement metric} 
 
-
-Paper ()
+cf the video \url{}

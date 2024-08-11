@@ -1,5 +1,3 @@
-
-%%% CONFIGURATION prop / Th / Déf %%%
 \newcommand{\id}[2]{ \hat{\mathbb{I}}_{#1}^{(#2)}}
 \newcommand{\strope}[1]{ e^{i \pi \phi _{#1}}}
 \newcommand{\stropeall}[1]{ e^{i \pi \displaystyle{ \sum_{l < #1}} f_l^\dagger f_l}}
@@ -55,15 +53,15 @@
 \newcommand{\ketg}{\ket{g}}              %% ground state
 \newcommand{\kete}{\ket{e}}              %% excited state
 \newcommand{\vac}{\ket{\text{vac}}}      %% vacuum
-
-
+\newcommand{\up}{\uparrow}
+\newcommand{\down}{\downarrow}
 
 %%% Pauli matrices
-\newcommand{\sx}{\sigma^x}
-\newcommand{\sy}{\sigma^y}
-\newcommand{\sz}{\sigma^z}
-\newcommand{\splus}{\sigma^{{+}}}
-\newcommand{\sminus}{\sigma^{{-}}}
+\newcommand{\sx}[1]{\hat{\sigma}_x^{(#1)}}
+\newcommand{\sy}[1]{\hat{\sigma}_y^{(#1)}}
+\newcommand{\sz}[1]{\hat{\sigma}_z^{(#1)}}
+\newcommand{\splus}[1]{\hat{\sigma}_+^{(#1)}}
+\newcommand{\sminus}[1]{\hat{\sigma}_-^{(#1)}}
 
 %%% Vectors
 \newcommand{\vecr}{\vec{r}}
@@ -108,6 +106,7 @@
 \newcommand{\eqhat}{\mathrel{\widehat{=}}}                           %% corresponds to, is equivalent
 \newcommand{\const}{\mathop{\text{const.}}}                          %% hermitian conjugate
 \newcommand{\goesto}{\longrightarrow}                                %% maps to, asymptotically goes to
+\newcommand{\basis}{\mathcal{B}}                                                %% maps to, asymptotically goes to
 
 %%% Second quantization
 \newcommand{\aop}{\ensuremath{a^{\vphantom\dagger}}\xspace}          %% annihilation operator a
@@ -171,80 +170,113 @@
 
 
 
-\newcommand{\myprop}[2]{%
-	
+\newcounter{prop}
+\newcommand{\myprop}[3]{%
+	\refstepcounter{prop}%
 	\begin{tcolorbox}[
 		enhanced,
 		colback=white,
 		colframe=darkpastelblue,
 		fonttitle=\bfseries,
-		title=Proposal: #1,
+		title=Proposition \theprop: #1,
 		attach boxed title to top left={yshift=-2mm, xshift=0.5cm},
 		boxed title style={colback=darkpastelblue, size=small},
 		sharp corners=all
 		]
-		#2
+		\label{prop:#3} #2
 	\end{tcolorbox}
 }
 
-\newcommand{\myth}[2]{%
+\newcounter{thm}
+\newcommand{\myth}[3]{%
+	\refstepcounter{thm}%
 	\begin{tcolorbox}[
 		enhanced,
 		colback=white,
 		colframe=harvardcrimson,
 		fonttitle=\bfseries,
-		title=Theorem: #1,
+		title=Theorem \thethm: #1,
 		attach boxed title to top left={yshift=-2mm, xshift=0.5cm},
 		boxed title style={colback=harvardcrimson, size=small},
 		sharp corners=all
 		]
-		#2
+		\label{thm:#3}#2
 	\end{tcolorbox}
 }
 
-\newcommand{\mydef}[2]{%
+\newcounter{coro}
+\newcommand{\mycoro}[3]{%
+	\refstepcounter{coro}%
+	\begin{tcolorbox}[
+		enhanced,
+		colback=white,
+		colframe=aurometalsaurus,
+		fonttitle=\bfseries,
+		title=Corollary \thecoro: #1,
+		attach boxed title to top left={yshift=-2mm, xshift=0.5cm},
+		boxed title style={colback=aurometalsaurus, size=small},
+		sharp corners=all
+		]
+		\label{coro:#3}#2
+	\end{tcolorbox}
+}
+
+\newcounter{defn}
+\newcommand{\mydef}[3]{%
+	\refstepcounter{defn}%
 	\begin{tcolorbox}[
 		enhanced,
 		colback=white,
 		colframe=asparagus,
 		fonttitle=\bfseries,
-		title=Definition: #1,
+		title=Definition \thedefn: #1,
 		attach boxed title to top left={yshift=-2mm, xshift=0.5cm},
 		boxed title style={colback=asparagus, size=small},
 		sharp corners=all
 		]
-		#2
+		\label{def:#3} #2
 	\end{tcolorbox}
 }
 
-\newcommand{\mylemma}[2]{%
+\newcounter{lem}
+\newcommand{\mylemma}[3]{% tilte, text, label
+	\refstepcounter{lem}%
 	\begin{tcolorbox}[
 		enhanced,
 		colback=white,
 		colframe=orange,
 		fonttitle=\bfseries,
-		title=Lemma: #1,
+		title=Lemma \thelem: #1,
 		attach boxed title to top left={yshift=-2mm, xshift=0.5cm},
 		boxed title style={colback=orange, size=small},
 		sharp corners=all
 		]
-		#2
+		\label{lem:#3} #2
 	\end{tcolorbox}
 }
 
-
-
-\newcommand{\mypostulat}[2]{%
+\newcounter{postulat}
+\newcommand{\mypostulat}[3]{%
+	\refstepcounter{postulat}%
 	\begin{tcolorbox}[
 		enhanced,
 		colback=white,
 		colframe=darkgray,
 		fonttitle=\bfseries,
-		title=Postulate: #1,
+		title=Postulate \thepostulat: #1,
 		attach boxed title to top left={yshift=-2mm, xshift=0.5cm},
 		boxed title style={colback=darkgray, size=small},
 		sharp corners=all
 		]
-		#2
+		\label{postulat:#3} #2
 	\end{tcolorbox}
 }
+
+% Reference commands
+\newcommand{\refth}[1]{\hyperref[#1]{Theorem~\ref*{#1}}}
+\newcommand{\refprop}[1]{\hyperref[#1]{Proposition~\ref*{#1}}}
+\newcommand{\refcoro}[1]{\hyperref[#1]{Corollary~\ref*{#1}}}
+\newcommand{\refdef}[1]{\hyperref[#1]{Definition~\ref*{#1}}}
+\newcommand{\reflem}[1]{\hyperref[#1]{Lemma~\ref*{#1}}}
+\newcommand{\refpostulat}[1]{\hyperref[Postulat:#1]{postulate~\ref*{#1}}}
+\newcommand{\myeqref}[1]{\hyperref[#1]{Equation~\ref*{#1}}}
