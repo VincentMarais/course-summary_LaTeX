@@ -26,55 +26,14 @@ to harness entanglement for practical applications,
 ensuring that it can be effectively used as a resource
 in quantum communication and computation.
 
-The work presented here go will study the simplification of the Kitaev model call $XY-\Gamma$ model 
-because this model have a good futur to build a quantum computer (cf paper XY-Gamma for the ref about Kitaev) 
-I this model we will see how the entanglement propagate and quantify the entanglement.
-
-\subsection{Model XY-DMI}
-Introduction on the Heinsenberg model + 
-Introduction on the DMI + spin chain +qubits
 
 
-
-The XY-$\Gamma$ model \cite{kheiri_information_2024} or XY model is a devivative of the 
-
-with a Dzyaloshinskii–Moriya interaction (DMI) \cite{moriya_anisotropic_1960,dzyaloshinsky_thermodynamic_1958} is one-dimentionel spin chain. 
-
-
-\begin{equation}
-	\mathcal{\hat{H}} = \mathcal{\hat{H}}_{XY} + \mathcal{\hat{H}}_{\Gamma},
-\end{equation}
-where
-\begin{equation}
-	\mathcal{\hat{H}}_{XY} = J \sum_{n=1}^L \left[ \left( \frac{1 + \delta}{2} \right) \sigma^x_n \sigma^x_{n+1} + \left( \frac{1 - \delta}{2} \right) \sigma^y_n \sigma^y_{n+1} \right] + h \sum_{n=1}^L \sigma^z_n,
-\end{equation}
-and
-\begin{equation}
-	\mathcal{\hat{H}}_{\Gamma} = \Gamma \sum_{n=1}^L \left( \sigma^x_n \sigma^y_{n+1} + \gamma \sigma^y_n \sigma^x_{n+1} \right).
-\end{equation}
-
-Here, $\sigma^x, \sigma^y, \sigma^z$ are the Pauli matrices, $J$ is the exchange constants, 
-$\delta$ is the anisotropy parameter, 
-$h$ is the strength of the transverse field, and 
-$D$ characterizes the amplitude of the off-diagonal exchange interactions with 
-$\gamma$ being the relative coefficient of these couplings.
-
-eff
-
-\begin{itemize}
-    \item \textbf{XY term} : $\hamil_{XY}$ describes the nearest-neighbor interactions along the 
-	$x$ and $y$ directions with anisotropy $\delta$ and a transverse magnetic field $h$.
-	\item \textbf{$\Gamma$ term or Dzyaloshinskii-Moriya interaction} :
-	 $\hamil_{\Gamma}$ introduces an additional interaction 
-	that mixes the $x$ and $y$ components of neighboring spins, breaking mirror symmetry (Because the particle at 
-	position $n$ does not have the same orientation of spin as the particle at position $n+1$, 
-	as represented by the term $\sigma^x_n \sigma^y_{n+1}$, where the particle at position $n$ has a spin oriented in the $x$ 
-	direction and the particle at position $n+1$ has a spin oriented in the $y$ direction.
-	).
-\end{itemize}
+The work presented a quantum simulation of a specific
+model of 1D lattice of \textbf{qubits} (quantum bit) a quantum system 
+capable of existing in two states, such as 
+the spin-up \(\ket{\uparrow}\) and spin-down 
+\(\ket{\downarrow}\) states of an electron call Heisenberg XY model \cite{van_der_sijs_heisenberg_1993}
+and with a Dzyaloshinskii-Moriya interaction (DMI) \cite{moriya_anisotropic_1960,dzyaloshinsky_thermodynamic_1958}. Finally 
+a protocol to accelerating the entanglement in this lattice. 
 
 
-
-\subsection{Entanglement metric} 
-
-cf the video \url{}

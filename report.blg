@@ -5,44 +5,44 @@ Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: plain.bst
 Reallocating 'name_of_file' (item size: 1) to 20 items.
 Database file #1: Intership_USACH.bib
-You've used 7 entries,
+You've used 10 entries,
             2118 wiz_defined-function locations,
-            549 strings with 5688 characters,
-and the built_in function-call counts, 3024 in all, are:
-= -- 278
-> -- 214
+            564 strings with 6021 characters,
+and the built_in function-call counts, 3784 in all, are:
+= -- 357
+> -- 230
 < -- 0
-+ -- 86
-- -- 78
-* -- 281
-:= -- 533
-add.period$ -- 26
-call.type$ -- 7
-change.case$ -- 60
++ -- 93
+- -- 82
+* -- 323
+:= -- 658
+add.period$ -- 36
+call.type$ -- 10
+change.case$ -- 70
 chr.to.int$ -- 0
-cite$ -- 7
-duplicate$ -- 73
-empty$ -- 181
-format.name$ -- 78
-if$ -- 580
+cite$ -- 10
+duplicate$ -- 103
+empty$ -- 257
+format.name$ -- 82
+if$ -- 741
 int.to.chr$ -- 0
-int.to.str$ -- 7
-missing$ -- 6
-newline$ -- 43
-num.names$ -- 14
-pop$ -- 48
+int.to.str$ -- 10
+missing$ -- 9
+newline$ -- 59
+num.names$ -- 20
+pop$ -- 65
 preamble$ -- 1
-purify$ -- 53
+purify$ -- 61
 quote$ -- 0
-skip$ -- 49
+skip$ -- 68
 stack$ -- 0
-substring$ -- 166
-swap$ -- 7
+substring$ -- 225
+swap$ -- 10
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 28
+type$ -- 38
 warning$ -- 0
-while$ -- 24
-width$ -- 8
-write$ -- 88
+while$ -- 33
+width$ -- 12
+write$ -- 121

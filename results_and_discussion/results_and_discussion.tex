@@ -1,0 +1,124 @@
+Results And Discussion
+
+
+\subsection{Entanglement in a spin chain with 2 qubits}
+In this section, we analyze the dynamics of a 
+system consisting of two qubits with the Hamiltonian given by:
+
+\[
+    \hat{H} =  \hbar J\left [ \left ( \frac{1 + \delta}{2} \right ) \sigma_1^x \otimes 
+    \sigma_2^x  + \left ( \frac{1 - \delta}{2} \right ) \sigma_1^y \otimes \sigma_2^y \right ] + 
+    D \hbar \left ( \sigma_1^x \otimes \sigma_2^y + \gamma \sigma_1^y \otimes \sigma_2^x  \right ) + g \left( 
+    \sigma_1^z \otimes \mathbb{\hat{I}} + \mathbb{\hat{I}} \otimes \sigma_2^z  
+\right).
+\]
+
+we focus on the concurrence $C(\rho(t))$, which quantifies the entanglement between 
+the two qubits. The analytical solution for the concurrence, as derived in Appendix B, is given by:
+
+\begin{equation*}
+        C(\rho(t)) = \abs*{\sin(2 \mu t)},
+\end{equation*}
+
+where \(\mu = \sqrt{J^2 + D^2(\gamma-1)^2}\).
+
+\subsubsection{Analysis of Concurrence Dynamics}
+
+The concurrence formula reveals a simple yet profound oscillatory behavior of the entanglement between the qubits. The parameter \(\mu\) plays a crucial role in determining the frequency of these oscillations, which depends on the coupling constants \(J\) and \(D\) as well as the anisotropy parameter \(\gamma\).
+
+\textbf{Impact of Coupling Constants \(J\) and \(D\):}
+
+The coupling constant \(J\) directly contributes to \(\mu\), indicating that a stronger XX and YY interaction 
+        leads to faster oscillations in concurrence. The term \(D^2(\gamma-1)^2\) suggests 
+        that the effect of the \(D\) coupling on the concurrence 
+        is modulated by the anisotropy \(\gamma\). For \(\gamma = 1\), 
+        this contribution vanishes, and the oscillation frequency is 
+        solely determined by \(J\). However, for \(\gamma \neq 1\), 
+        the anisotropy introduces additional dynamics through \(D\).
+
+
+ \textbf{Behavior for Different Regimes of \(\mu\):}
+
+ When \(\mu\) is large (e.g., large \(J\) 
+        or significant anisotropy), the concurrence oscillates 
+        rapidly, meaning that the system frequently transitions 
+        between entangled and separable states. For small \(\mu\), the oscillations are slower, 
+        indicating more prolonged periods of either high or low entanglement.
+
+\textbf{Maximal Concurrence:}
+ The concurrence achieves its maximum value of 1 when \(\sin(2 \mu t) = \pm 1\), indicating a fully entangled state.
+ Conversely, \(C(\ket*{\psi(t)}) = 0\) when \(\sin(2 \mu t) = 0\), representing separable states where the qubits are not entangled.
+
+\subsection{Discussion}
+
+The results provide significant insights into the entanglement 
+dynamics in a two-qubit system with anisotropic and cross-coupling terms. 
+The oscillatory nature of the concurrence reflects the intricate interplay 
+between different types of interactions present in the Hamiltonian. 
+This behavior is essential for applications in quantum information 
+processing, where control over entanglement is crucial.
+
+\begin{itemize}
+    \item \textbf{Quantum Control:} By tuning the parameters 
+    \(J\), \(D\), and \(\gamma\), one can manipulate 
+    the entanglement dynamics, potentially allowing for 
+    the design of specific quantum gates or the 
+    implementation of quantum error correction protocols that rely on dynamic entanglement.
+
+    \item \textbf{Effect of Anisotropy:} The dependence of \(\mu\) on 
+    \(\gamma\) illustrates how anisotropy can either enhance or diminish 
+    the contribution of the \(D\) coupling to the entanglement dynamics. 
+    This result suggests that systems with tunable anisotropy could be 
+    particularly versatile in quantum control schemes.
+
+    \item \textbf{Robustness of Entanglement:} The periodic nature of the concurrence indicates that, under specific conditions, entanglement can be robust over time, recurring predictably as a function of time. This property might be exploited to maintain entanglement over long durations in quantum communication protocols.
+\end{itemize}
+
+In Conclusion
+ concurrence 
+ quantifies the entanglement between two qubits. 
+ For example, when \(t/T_0 = 0.5 + k\), where \(k \in \mathbb{N}\), the concurrence is 1. At this time, the state \(\ket{\psi (t)}\) is:
+
+
+ 
+ \begin{equation*}
+ 	\ket{\psi \left( t = \frac{\pi}{4} + \frac{k\pi}{2}\right) } = \frac{1}{\sqrt{2}} \ket{\uparrow \downarrow} - \frac{i(J + 2iD)}{\sqrt{2}\gamma}   \ket{\downarrow \uparrow}
+ \end{equation*}
+ 
+ 
+This state is evidently entangled according to the definition.
+
+Moreover we can recognize a Bell state we this form: 
+
+\begin{equation}
+		\ket{\psi \left( t = \frac{\pi}{4} + \frac{k\pi}{2}\right) } = \frac{1}{\sqrt{2}} \left(  \ket{\uparrow \downarrow} -ie^{i\theta}\ket{\uparrow \downarrow}  \right)
+\end{equation}
+
+where $ \theta = \arctan\left( \frac{2D}{J}\right)$
+
+
+ 
+And at $t/scale = k$ the concurrence equal to $0$, 
+
+ \begin{equation*}
+	\ket{\psi \left( t = \frac{k\pi}{2}\right) } = \frac{i(J + 2iD)}{\sqrt{2}\gamma}   \ket{\downarrow \uparrow}
+\end{equation*}
+
+In this case, the state is separable.
+	
+
+\includegraphics*{results_and_discussion/2_qubits/up_down_without_ana.pdf}
+
+\subsubsection{Analytical approch}
+\includegraphics*{results_and_discussion/2_qubits/up_down_with_ana.pdf}
+
+
+\subsection{Entanglement in a spin chain with N qubits}
+
+\subsubsection{Entanglement in a spin chain with 3 qubits}
+
+
+\subsubsection{Entanglement in a spin chain with 8 qubits}
+
+
+\subsection{Protocol of accelerating of the entanglement}

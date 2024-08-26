@@ -1,0 +1,305 @@
+The objective of this section is to solve the Schrödinger equation for a chain of two qubits:
+
+\[ 	\left\{\begin{matrix}
+		i \hbar \partial_t \ket{\psi(t)} = \hamil\ket{\psi(t)}  \\
+		 \\
+		 \ket*{\psi (t=0)} = \ket*{\up \down}
+	   \end{matrix}\right.\]
+
+
+
+The Hamiltonian of this system is given by:
+
+\begin{equation}\label{eq: Hamiltionian model XY-Gamma 2 qubits}
+	\hamil =  \hamil_{XY} + \hamil_{D}
+\end{equation}
+
+\begin{equation}\label{eq: Hamiltionian model XY 2 qubits}
+	\hamil_{XY} = \hbar J\left [ \left ( \frac{1 + \delta}{2} \right ) \sigma_x^{(1)} \otimes \sigma_x^{(2)} 
+	+ \left ( \frac{1 - \delta}{2} \right ) \sigma_y^{(1)} \otimes \sigma_y^{(2)} \right ] 
+	+ \hbar g \sigma_z^{(1)} \otimes \id{2}{2}
+\end{equation}
+
+and 
+
+\begin{equation}\label{eq: Hamiltionian model Gamma 2 qubits}
+	\hamil_{D} = D \hbar \left ( \sigma_x^{(1)} \otimes \sigma_y^{(2)} + \gamma \sigma_y^{(1)} \otimes \sigma_x^{(2)} \right ) 
+\end{equation}
+Now let define the Hilbert space of the quantum system of 
+two qubits, first of all the Hilbert 
+basis of the first qubit ($\mathcal{H}_1$: 
+Hilbert space of the first qubit) is given by:
+
+\[ \ket{\up}^{(1)} =  \begin{pmatrix} 1 \\0 \end{pmatrix} \ \text{and} \ \ket{\down}^{(1)} =  \begin{pmatrix} 0 \\1 \end{pmatrix} \]
+
+then the Hilbert basis of the second qubit ($\mathcal{H}_2$: Hilbert space of the second qubit) is given by:
+
+\[ \ket{\up}^{(2)} =  \begin{pmatrix} 1 \\0 \end{pmatrix} \ \text{and} \ \ket{\down}^{(2)} =  \begin{pmatrix} 0 \\1 \end{pmatrix} \]
+
+Therefore the basis for the total Hilbert space ($\mathcal{H}_{tot} = \mathcal{H}_{1} \otimes \mathcal{H}_{2}$) is:
+
+\[ \mathcal{B}_{\mathcal{H}_{tot}} = \{ \ket{\up}^{(1)} \otimes \ket{\up}^{(2)}, \ket{\up}^{(1)} \otimes \ket{\down}^{(2)}, \ket{\down}^{(1)} \otimes \ket{\up}^{(2)},  \ket{\down}^{(1)} \otimes \ket{\down}^{(2)} \} \]
+
+To simplify the notation in this report, we will use a classical notation:
+
+\begin{equation}\label{eq: basis H tot}
+	\mathcal{B}_{\mathcal{H}_{tot}} = \{ \ket{\up \up}, \ket{\up \down}, \ket{\down \up}, \ket{\down \down} \} 
+\end{equation}
+
+The Hilbert space, 
+a fundamental construct 
+in quantum mechanics and quantum 
+computing, represents the complete set of possible states 
+for a quantum system. However, the vastness of this space 
+often poses significant computational challenges. 
+The reduction of Hilbert space, therefore, becomes 
+a crucial technique for making quantum computations 
+tractable. This process involves identifying and 
+isolating a subspace of the Hilbert space that 
+captures the essential dynamics and properties 
+of the system under consideration.
+
+
+
+\subsubsection{Hilbert space reduction}
+To reduce of the Hilbert space. Let see the action of the 
+$\hamil$ on the initial state
+
+\begin{equation}\label{eq: action hamil on initial state}
+    \hamil \ket*{\up \down} = \hbar \left[J + i D(\gamma - 1)\right] \ket*{\down \up} -
+    + \hbar g  \left(\ket*{\up \down} - \ket*{\up \down} \right) 
+\end{equation}
+
+
+
+With \myeqref{eq: action hamil on initial state} the minimal 
+basis of the system is :
+\begin{equation}
+    \basis_{red} = \{ \ket*{\up \down} , 
+    \ket*{\down \up}  \}
+\end{equation}
+
+So let expressed the Hamiltionian in $\basis_{red}$, for that 
+let see the action of $ \hamil $ on the $\ket*{\down \up}$
+
+\begin{equation}
+    \hamil \ket*{\down \up} = \hbar \left[J - i D(\gamma - 1)\right] \ket*{\up \down} 
+    - \hbar  g\left(\ket*{\down \up} - \ket*{\down \up} \right) 
+\end{equation}
+
+
+So with the the effectif Hamiltionian in $\basis_{red}$ is :
+
+\begin{equation}\label{eq: Heff in basis reduce 2 qubits}
+    \boxed{\hamil_{\text{eff}} =  \hbar \begin{bmatrix}
+        0 & \kappa  \\
+        \kappa^* &  0\\
+        \end{bmatrix} }
+\end{equation}
+
+where $\kappa = J + i D(\gamma - 1)$
+
+Let us define $a = \frac{1+\delta}{2}$ and $b=\frac{1-\delta}{2}$, and 
+let us transform the $\hamil_{XY}$ using \refprop{prop:Identity Pauli Matrix}:
+\begin{equation*}
+	\hamil_{XY} = \hbar J \left[ a\left( \splus{1} 
+	+ \sminus{1}   \right) \left( \splus{2} 
+	+ \sminus{2}  \right) - b \left( \splus{1} 
+	- \sminus{1}   \right) \left( \splus{2} 
+	- \sminus{2}  \right) \right] + 
+	\hbar g \sigma_z^{(1)}
+\end{equation*}
+
+
+
+Now, let us use the bilinearity and associativity of the Kronecker product:
+
+\begin{align*}
+    \hamil_{XY} &= \hbar J \left[ a \left( 
+        \splus{1} \splus{2} 
+        + \splus{1} \sminus{2} 
+        + \sminus{1} \splus{2}
+        + \sminus{1} \sminus{2} \right) \right. \\ 
+    &\quad \left. - b \left( 
+        \splus{1} \splus{2} 
+        - \splus{1} \sminus{2} 
+        - \sminus{1} \splus{2}
+        + \sminus{1} \sminus{2} \right) \right] 
+    + \hbar g \left[ \sz{1} + \sz{2}\right]
+\end{align*}
+
+Since $a + b = 1$ and $a-b = \delta $, we have:
+
+\begin{align*}
+		\hamil_{XY} = \hbar J \left[ \delta \left( 
+		\splus{1} \splus{2} 
+		+ \sminus{1} \sminus{2} \right) 
+		+ \left(
+		\splus{1} \sminus{2} 
+		+ \sminus{1} \splus{2}
+		\right)   \right] 
+		+ \hbar g \left[ \sz{1} + \sz{2}\right]
+\end{align*}
+
+Let us now proceed similarly for $\hamil_{D}$:
+
+\begin{align*}
+	\hamil_{D} &= \hbar D \left( 
+	\sx{1} \sy{2} + \gamma \sy{1} \sx{2}
+	\right) \\
+	&= - i\hbar D 
+	\left[ \left(\splus{1} + \sminus{1}  \right) 
+	\left(\splus{2} - \sminus{2}  \right) + \gamma
+	\left(\splus{1} - \sminus{1}  \right) 
+	\left(\splus{2} + \sminus{2}  \right) \right]
+	\ \ \ \  
+	\text{by \refprop{prop:Identity Pauli Matrix}} \\
+	&=-i\hbar D 
+	\left[ \left(
+	\splus{1} \splus{2} -
+	\splus{1} \sminus{2} +
+	\sminus{1}  \splus{2} -
+	\sminus{1} \sminus{2} \right) 
+	+ \gamma
+	\left(\splus{1} \splus{2} +
+	\splus{1} \sminus{2} -
+	\sminus{1}  \splus{2} -
+	\sminus{1} \sminus{2} \right)
+	\right] \\
+	&=
+	-i\hbar D 
+	\left[ (\gamma + 1) 
+	\splus{1} \splus{2} +
+	(\gamma - 1) \splus{1} \sminus{2} -
+	(\gamma-1) \sminus{1}  \splus{2} 
+	-(\gamma + 1)\sminus{1} \sminus{2} 
+	\right] \\
+	&=
+	i\hbar D 
+	\left[ \left(\gamma + 1 \right) \left(\sminus{1} \sminus{2}
+	- \splus{1} \splus{2}  \right)  + 
+	\left(\gamma - 1 \right) \left(
+		\sminus{1} \splus{2} - 
+		\splus{1} \sminus{2}\right) 
+	\right]
+\end{align*}
+
+Given the initial state $\ket*{\uparrow \downarrow}$, as discussed in the section on reduction of Hilbert space, we can reduce the basis of the Hilbert space to $\basis_{red}$. The operators are as follows:
+
+
+
+\begin{equation}
+	\left\{\begin{matrix}
+		i\left(\sminus{1} \splus{2} - 
+		\splus{1} \sminus{2} |_{\basis_{red}}\right) = \sigma_y 	\\
+		\\
+		\splus{1} \sminus{2} 
+		+ \sminus{1} \splus{2} |_{\basis_{red}} = \sigma_x \\
+		\\
+		\sz{1}|_{\basis_{red}} = \sigma_z \\
+		\\
+
+		\sz{2}|_{\basis_{red}} = -\sigma_z \\
+		\\
+		\splus{1} \splus{2} 
+		+ \sminus{1} \sminus{2} |_{\basis_{red}}
+		= \sminus{1} \sminus{2}
+		- \splus{1} \splus{2} |_{\basis_{red}} 
+		= 0
+	   \end{matrix}\right.
+\end{equation}
+
+\begin{equation*}
+	\hamil_{\text{eff}} = \hbar \left( 
+		J \sigma_x + D(\gamma - 1)\sigma_y + g \sigma_z
+	 \right)
+\end{equation*}
+
+
+
+Using \refth{thm:Matrix exponential and Pauli matrices} and \myeqref{eq: Heff in basis reduce 2 qubits}, the evolution operator in the basis $\basis_{red}$ is given by:
+
+\begin{equation}
+	\hat{U}(t,t_0) = e^{-i\hamil_{\text{eff}} t /\hbar} = \cos(\mu t) \hat{\mathbb{I}} 
+	- i \sin(\mu t) \left[ \frac{J \sigma_x + D(\gamma - 1)\sigma_y}{\mu} \right]
+\end{equation}
+
+
+where $\mu = \sqrt{J^2 + D^2(\gamma-1)^2 }$.
+
+Thus, using the definition of the time evolution operator and the properties in \refprop{prop:Action of Pauli matrices on spin states}, we can compute $\ket*{\psi (t)}$:
+
+\begin{equation}\label{eq: psi t}
+	\boxed{	\ket{\psi (t)} = \cos(\mu t)  \ket*{\uparrow \downarrow} -i\sin(\mu t) \left[ \frac{J +i D (\gamma -1)}{\mu}  \right] \ket*{\downarrow \uparrow}
+	}
+\end{equation}
+
+\myth{Concurrence of two qubit}{
+	
+	Consider a two-qubit system with the basis states $\mathcal{B} = \{ \ket{\downarrow \downarrow} , \ket{\downarrow \uparrow}, 
+	\ket{\uparrow \downarrow}, \ket{\uparrow \uparrow} \}$ for its Hilbert space. 
+	
+	For a quantum state $\ket{\psi}$ in $\mathcal{B}$ expressed as 
+	\begin{equation}\label{eq: psi qubit}
+		\ket{\psi} = C_0 \ket{\downarrow \downarrow} + C_1\ket{\downarrow \uparrow} + C_2\ket{\uparrow \downarrow} +  C_3\ket{\uparrow \uparrow}  
+	\end{equation}
+	where $\forall i \in [[0, 3]], \ C_i \in \mathbb{C}$
+	the concurrence $C(\ket{\psi})$ is given by
+	
+	
+	\begin{equation}
+		C\left( \ket{\psi} \right)  = 2\left| C_1C_2 - C_0C_3 \right| 
+	\end{equation}
+	
+}{Concurrence of two qubit}	
+
+
+
+
+\begin{proof}
+	We start by recalling the definition of concurrence $C(\ket{\psi})$ for a two-qubit quantum state $\ket{\psi}$ 
+	\cite{wootters_entanglement_1998}:
+
+\begin{equation}
+	C\left( \ket{\psi} \right)  = \left|  \bra{\psi} \sigma_y \otimes \sigma_y \ket{\psi^*} \right| 
+\end{equation} 
+
+
+
+The action of the tensor product $\sigma_y \otimes \sigma_y$ on $\ket{\psi^*}$, considering the transformation properties of $\sigma_y$ on the basis states, is computed as:
+
+
+
+\begin{equation}
+	\sigma_y \otimes \sigma_y \ket{\psi^*}= C_0^* \ket{\uparrow \uparrow}  + C_1^* \ket{\uparrow \downarrow} + C_2^* \ket{\downarrow \uparrow}  +  C_3^*\ket{\downarrow \downarrow}  
+\end{equation}
+
+Next, we evaluate the inner product $\bra{\psi} \sigma_y \otimes \sigma_y \ket{\psi^*}$. Recall that the basis states are orthogonal and normalized. Therefore, we only consider terms where the bra and ket vectors match, which gives:
+
+
+
+
+
+\begin{equation}
+	\bra{\psi} \sigma_y \otimes \sigma_y \ket{\psi}^* = -2C_0C_3 + 2C_1C_2
+\end{equation}
+
+Thus, the concurrence $C(\ket{\psi})$ becomes:
+
+
+\begin{equation*}
+	C\left( \ket{\psi} \right)  = 2 \left|  C_1C_2 -C_0C_3 \right| 
+\end{equation*}
+\end{proof}
+
+So 
+\begin{align*}
+	C(\ket*{\psi(t)}) &= 2\abs{ -\cos(\mu t)	
+	i\sin(\mu t) \left[ \frac{J 
+	+i D (\gamma -1)}{\mu}  \right]  } \\
+	&= \abs*{\sin(2\mu t)}
+\end{align*}
+
+\begin{equation*}
+	\boxed{C(\ket*{\psi(t)}) = \abs*{\sin(2 \mu t)}}
+\end{equation*}

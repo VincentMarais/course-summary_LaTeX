@@ -1,0 +1,107 @@
+In this section, 
+we will discuss how to quantify 
+entanglement in a quantum system.
+Finally we will express the Heisenberg XY model   and 
+the Dzyaloshinskii-Moriya interaction (DMI).
+
+
+
+\subsection{Quantification of the Entanglement State}
+
+
+Quantifying entanglement is crucial for 
+evaluating the strength and practical 
+applicability of quantum states. 
+Among the various metrics, \textbf{concurrence} \cite{wootters_entanglement_1998}
+is a widely used measure, especially in two-qubit 
+systems. 
+This section outlines the calculation 
+of concurrence, which provides a numerical 
+indicator of the degree of entanglement 
+in a two-qubit quantum state. 
+Concurrence \(C(\rho)\) is defined as:
+
+\begin{equation}\label{def: concurrence}
+    C(\rho) = \text{max}\left(0, \lambda_1 - 
+\lambda_2 - \lambda_3 - \lambda_4\right)
+\end{equation}
+
+Here, \(\lambda_i\) (for \(i = 1, 2, 3, 4\)) are the square roots of the eigenvalues 
+of the matrix \(\rho \tilde{\rho}\), listed in descending order. 
+The density matrix is defined as \(\rho = \ketbra{\psi}{\psi}\),
+where \(\ket{\psi(t)}\) represents the state of the two qubits. The matrix \(\tilde{\rho}\) is given by:
+
+
+\[
+\tilde{\rho} = \left(\sigma^y 
+\otimes \sigma^y\right) \rho^* 
+\left(\sigma^y \otimes \sigma^y\right)
+\]
+
+where \(\rho^*\) is the complex conjugate of \(\rho\), and \(\sigma^y\) is the Pauli-Y matrix:
+
+\[
+\sigma^y = \begin{pmatrix}
+0 & -i \\
+i & 0
+\end{pmatrix}
+\]
+
+Concurrence values range from 0 to 1, 
+where 0 denotes a separable (non-entangled) state, 
+and 1 indicates a maximally entangled state. In two-qubit systems, 
+the most recognized maximally entangled states are the Bell states:
+
+
+\[
+\begin{aligned}
+    |\Phi^+\rangle &= \frac{1}{\sqrt{2}} \left( \ket{\downarrow\downarrow} + \ket{\uparrow\uparrow} \right) \\
+    |\Phi^-\rangle &= \frac{1}{\sqrt{2}} \left( \ket{\downarrow\downarrow} - \ket{\uparrow\uparrow} \right) \\
+    |\Psi^+\rangle &= \frac{1}{\sqrt{2}} \left( \ket{\downarrow\uparrow} + \ket{\uparrow\downarrow} \right) \\
+    |\Psi^-\rangle &= \frac{1}{\sqrt{2}} \left( \ket{\downarrow\uparrow} - \ket{\uparrow\downarrow} \right)
+\end{aligned}
+\]
+
+
+
+\newpage
+
+
+\subsection{Heisenberg XY model with DM interaction}
+The Heisenberg XY model, can be described by the following Hamiltonian :
+
+
+\begin{equation}
+	\mathcal{\hat{H}}_{XY} = J \hbar \sum_{n=1}^L \left[ \left( \frac{1 + \delta}{2} \right) \sigma^x_n \otimes \sigma^x_{n+1} + \left( \frac{1 - \delta}{2} \right) \sigma^y_n \otimes \sigma^y_{n+1} \right] + g \hbar \sum_{n=1}^{L+1} \sigma^z_n,
+\end{equation}
+
+here, \( \sx{n}\), \(\sy{n}\), and \(\sz{n}\) are the Pauli matrices of the qubit $n$ in the lattice, 
+\(J\) is the exchange constant, \(\delta\) is the anisotropy parameter, 
+\(g\) is the strength of the transverse magnetic field, 
+$\hbar$ is the Planck constant reduce,
+$\otimes $ is the tensor product between two operator and 
+\(L\) is the length of the lattice. The Dzyaloshinskii-Moriya interaction (DMI) adds another term to the Hamiltonian, represented by:
+
+
+\begin{equation}
+	\mathcal{\hat{H}}_{D} = D\hbar \sum_{n=1}^L \left( \sigma^x_n \otimes \sigma^y_{n+1} + \gamma \sigma^y_n \otimes \sigma^x_{n+1} \right),
+\end{equation}
+
+where \(D\) is the DMI constant and \(\gamma\) is a correction factor associated with the DMI.
+Therefore, the Hamiltonian for the 1D lattice that we study is:
+
+
+\begin{equation}
+	\mathcal{\hat{H}} = \mathcal{\hat{H}}_{XY} + \mathcal{\hat{H}}_{D}.
+\end{equation}
+
+To get a schematic the system we will study in \refig{fig:Schematic of the lattice of the spin chain}
+
+\graphli{1}{intro/Spin chain.pdf}{
+    Schematic of the lattice of $L+1$ qubits with the Heisenberg XY model and DMI, 
+    where the blue arrows represent the spin states 
+    of the qubits, and the gray waves represent 
+    the interaction between two neighboring qubits.
+}{Schematic of the lattice of the spin chain}
+
+

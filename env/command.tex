@@ -44,6 +44,9 @@
 
 %%% Named states
 \newcommand{\ketPsi}{\ket{\Psi}}
+\newcommand{\ketpsit}{\ket{\psi(t)}}
+\newcommand{\ketpsitime}[1]{\ket{\psi(#1)}}
+
 \newcommand{\ketpsi}{\ket{\psi}}
 \newcommand{\ketphi}{\ket{\varphi}}
 \newcommand{\ketup}{\ket{\uparrow}}      %% spin up
@@ -57,11 +60,11 @@
 \newcommand{\down}{\downarrow}
 
 %%% Pauli matrices
-\newcommand{\sx}[1]{\hat{\sigma}_x^{(#1)}}
-\newcommand{\sy}[1]{\hat{\sigma}_y^{(#1)}}
-\newcommand{\sz}[1]{\hat{\sigma}_z^{(#1)}}
-\newcommand{\splus}[1]{\hat{\sigma}_+^{(#1)}}
-\newcommand{\sminus}[1]{\hat{\sigma}_-^{(#1)}}
+\newcommand{\sx}[1]{\hat{\sigma}_{#1}^x}
+\newcommand{\sy}[1]{\hat{\sigma}_{#1}^y}
+\newcommand{\sz}[1]{\hat{\sigma}_{#1}^z}
+\newcommand{\splus}[1]{\hat{\sigma}_{#1}^+}
+\newcommand{\sminus}[1]{\hat{\sigma}_{#1}^-}
 
 %%% Vectors
 \newcommand{\vecr}{\vec{r}}
@@ -101,12 +104,13 @@
 
 %%% Special symbols
 \newcommand{\hc}{\mathop{\text{h.c.}}}                               %% hermitian conjugate
-\newcommand{\hamil}{\ensuremath{\operatorname{{\hat{H}}}}\xspace}    %% Hamilton operator
+\newcommand{\hamil}{\hat{\mathcal{H}}}    %% Hamilton operator
 \newcommand{\hastobe}{\stackrel{!}{=}}                               %% has to be
 \newcommand{\eqhat}{\mathrel{\widehat{=}}}                           %% corresponds to, is equivalent
 \newcommand{\const}{\mathop{\text{const.}}}                          %% hermitian conjugate
 \newcommand{\goesto}{\longrightarrow}                                %% maps to, asymptotically goes to
 \newcommand{\basis}{\mathcal{B}}                                                %% maps to, asymptotically goes to
+\newcommand{\opevolution}[1]{\mathcal{U}(t,#1)}                                                %% maps to, asymptotically goes to
 
 %%% Second quantization
 \newcommand{\aop}{\ensuremath{a^{\vphantom\dagger}}\xspace}          %% annihilation operator a
@@ -133,6 +137,18 @@
 
 
 %%% Figures
+
+\newcommand{\graphli}[4]{
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=#1\linewidth]{#2}
+		\caption{#3}
+		\label{fig:#4}
+	\end{figure}
+} %%! options, filename
+
+
+
 \newcommand{\igopt}[2]{\includegraphics[#1]{#2}} %%! options, filename
 
 \newcommand{\ig}[2]{\igopt{width=#1\columnwidth}{#2}} %%! width in units of textwidth, filename
@@ -273,6 +289,7 @@
 }
 
 % Reference commands
+\newcommand{\refig}[1]{\hyperref[#1]{Figure~\ref{#1}}}
 \newcommand{\refth}[1]{\hyperref[#1]{Theorem~\ref*{#1}}}
 \newcommand{\refprop}[1]{\hyperref[#1]{Proposition~\ref*{#1}}}
 \newcommand{\refcoro}[1]{\hyperref[#1]{Corollary~\ref*{#1}}}

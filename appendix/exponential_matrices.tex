@@ -1,0 +1,155 @@
+\subsection{Generalities and Recall on Matrix Series}
+
+
+\mydef{Norme matrix}{For \( A = (a_{ij}) \in M_n(\mathbb{C}) \), we define
+	\[ \|A\|_\infty = \max \{|a_{ij}| ; 1 \leq i, j \leq n\}. \]
+	
+	\(\|\cdot\|_\infty\) is a norm on \( M_n(\mathbb{C}) \), i.e., it is a function with values in \( \mathbb{R}^+ \) such that
+	\begin{itemize}
+		\item \( \forall A, \|A\|_\infty = 0 \iff A = 0 \),
+		\item \( \forall A, \forall \lambda \in \mathbb{C}, \|\lambda A\|_\infty = |\lambda| \cdot \|A\|_\infty \),
+		\item \( \forall A, B, \|A + B\|_\infty \leq \|A\|_\infty + \|B\|_\infty \).
+	\end{itemize}
+	
+
+	
+	
+	}{Norme matrix}
+
+In the following, we will denote \( \|\cdot\| \) instead of \( \|\cdot\|_\infty \).
+
+
+\mydef{Converge sequence of matrix}{
+
+
+\begin{itemize}
+	\item A sequence \( (A_k) \) of \( M_n(\mathbb{C}) \) is said to be convergent if there exists \( A \in M_n(\mathbb{C}) \) such that \( \forall \epsilon > 0, \exists k_0 \in \mathbb{N} \) such that \( k \geq k_0 \Rightarrow \|A_k - A\| < \epsilon \).
+	\item A sequence \( (A_k) \) is said to be Cauchy if \( \forall \epsilon > 0, \exists k_0 \in \mathbb{N}, \forall k, k_0 \geq k_0, \|A_k - A_{k_0}\| < \epsilon \).
+\end{itemize}
+
+}{Converge sequence of matrix}
+
+
+\myprop{Characterization of matrix convergence}{Let \( (A_k) \) be a 
+sequence of \( M_n(\mathbb{C}) \). Then it is Cauchy if and only if it is convergent.}{Characterization of matrix convergence}
+
+
+\begin{proof}
+	The right-to-left direction is classical, and the direct direction relies on the completeness of \( \mathbb{C} \)
+\end{proof}
+
+
+\mydef{Convergent and Absolutely convergent matrix serie}{Given a sequence \( (A_k) \) of \( M_n(\mathbb{C}) \), we define the associated series denoted \( \sum A_k \) as the sequence \( (S_k) \) with general term
+	\[ S_k = \sum_{l=0}^{k} A_l. \]
+
+The series is said to be absolutely convergent if the real series \( \sum \|A_k\| \) is convergent.}{Convergent 
+and Absolutely convergent matrix serie}
+
+
+
+
+\myprop{Convergent and Absolutely convergent matrix serie}{If \( \sum A_k \) is absolutely convergent, then it is convergent.}
+{Convergent and Absolutely convergent matrix serie}
+
+
+\begin{proof}
+	Let \( \epsilon > 0 \). For all \( k \in \mathbb{N} \), denote \( T_k = \sum_{l=0}^{k} \|A_l\| \) and \( S_k = \sum_{l=0}^{k} A_l \). By hypothesis, \( (T_k) \) converges (in \( \mathbb{R} \)), so it is Cauchy. Hence, there exists \( k_0 \in \mathbb{N} \) such that for \( k, k_0 \geq k_0 \), we have \( |T_k - T_{k_0}| < \epsilon \).
+	
+	For \( k_0 \geq k \geq k_0 \), we have
+	\[ \|S_{k_0} - S_k\| = \left\| \sum_{l=k+1}^{k_0} A_l \right\| \leq \sum_{l=k+1}^{k_0} \|A_l\| = T_{k_0} - T_k < \epsilon. \]
+	Thus, the sequence \( (S_k) \) is Cauchy, hence convergent.
+\end{proof}
+
+
+
+\mylemma{Matrix inequality}{For \( A, B \in M_n(\mathbb{C}) \),
+	\[ \|AB\| \leq n \|A\| \|B\| \quad \text{and} \quad \|A^k\| \leq n^{k-1} \|A\|^k. \]}{Matrix inequality}
+
+
+\begin{proof}
+Let \( A = (a_{ij}), B = (b_{ij}), \) and \( C = AB = (c_{ij}) \). For all \( i, j \),
+\[ |c_{ij}| = \left| \sum_{k=1}^{n} a_{ik} b_{kj} \right| \leq \sum_{k=1}^{n} |a_{ik}||b_{kj}| \leq \sum_{k=1}^{n} \|A\| \|B\| = n \|A\| \|B\|. \]
+Consequently, \( \|C\| \leq n \|A\| \|B\| \).
+
+The second inequality is obtained by induction on \( k \) using the first.
+\end{proof}
+
+
+
+
+
+	
+\subsection{Properties exponential of matrix}
+	
+\mydef{Exponential of matrix}{Let \( A \in M_n(\mathbb{C}) \). We define \( e^A = \exp(A) \in M_n(\mathbb{C}) \) by
+	\[ e^A = \sum_{k=0}^{+\infty} \frac{A^k}{k!}. \]}{Properties exponential of matrix}
+	
+
+\myth{Existance of the exponential of matrix}{The series \( \sum \frac{A^k}{k!} \) 
+converges. Thus, the matrix \( e^A \) is well-defined.}{Existance of the exponential of matrix}
+
+	
+\begin{proof}
+	If \( A = 0 \), it is trivial. We assume \( A \) is non-zero. We show that the series is absolutely convergent. Indeed,
+	\[ \left\|\sum_{l=0}^{k} \frac{A^l}{l!}\right\| \leq \sum_{l=0}^{k} \frac{n^{l-1} \|A\|^l}{l!}. \]
+	
+	Let \( u_l = \frac{n^{l-1} \|A\|^l}{l!} \). Then \( \frac{u_{l+1}}{u_l} = \frac{n \|A\|}{l+1} \) and this tends to 0 as \( l \) tends to \( +\infty \). By the D'Alembert criterion, the series \( \sum u_l \) is convergent, which implies the absolute convergence of our original series.
+\end{proof}
+	
+
+\myth{Matrix exponential and Pauli matrices}{
+Let the matrix \(\vec{\sigma} = \hat{\sigma}^x \hat{x} + \hat{\sigma}^y \hat{y} + \sigma_z \hat{z}\) 
+and the vector \(\hat{n} = a \hat{x} + b \hat{y} + c \hat{z}\), where \((\hat{x}, \hat{y}, \hat{z})\) 
+is an orthonormal basis. The \(\sigma_a\) are the Pauli matrices for \(a \in \{x, y, z\}\).
+
+If \(  \left\| \hat{n} \right\| =1 \) then :
+\begin{equation}
+	e^{i \mu (\hat{n} \cdot \vec{\sigma})} = \mathbb{\hat{I}} \cos  (\mu)  + i (\hat{n} \cdot \vec{\sigma}) \sin (\mu).
+\end{equation}
+
+where \( .  \) : is the inner product in $ \mathbb{R}^3$
+
+
+}{Matrix exponential and Pauli matrices}
+
+\begin{proof}
+	Exponential of a Pauli vector:
+
+For 
+
+\[
+\vec{\mu} = \mu \hat{n}, \quad |\hat{n}| = 1,
+\]
+
+one has, for even powers, \(2p\), \(p = 0, 1, 2, 3, \ldots\)
+
+\[
+(\hat{n} \cdot \vec{\sigma})^{2p} = I,
+\]
+
+which can be shown first for the \(p = 1\) case using the anticommutation relations. For convenience, the case \(p = 0\) is taken to be \(I\) by convention.
+
+For odd powers, \(2q + 1\), \(q = 0, 1, 2, 3, \ldots\)
+
+\[
+(\hat{n} \cdot \vec{\sigma})^{2q+1} = \hat{n} \cdot \vec{\sigma}.
+\]
+
+Matrix exponentiating, and using the Taylor series for sine and cosine,
+
+\begin{align*}
+	e^{i\mu(\hat{n} \cdot \vec{\sigma})} &= \sum_{k=0}^{\infty} \frac{i^k [\mu (\hat{n} \cdot \vec{\sigma})]^k}{k!} \\
+	&= \sum_{p=0}^{\infty} \frac{(-1)^p (\mu \hat{n} \cdot \vec{\sigma})^{2p}}{(2p)!} 
+	+ i \sum_{q=0}^{\infty} \frac{(-1)^q (\mu \hat{n} \cdot \vec{\sigma})^{2q+1}}{(2q+1)!} \\
+	&= I \sum_{p=0}^{\infty} \frac{(-1)^p \mu^{2p}}{(2p)!} + i (\hat{n} \cdot \vec{\sigma}) 
+	\sum_{q=0}^{\infty} \frac{(-1)^q \mu^{2q+1}}{(2q+1)!}.
+\end{align*}
+
+
+In the last line, the first sum is the cosine, while the second sum is the sine; so, finally,
+
+\[
+e^{i\mu(\hat{n} \cdot \vec{\sigma})} = \mathbb{\hat{I}} \cos \mu + i (\hat{n} \cdot \vec{\sigma}) \sin \mu.
+\]
+\end{proof}
+
