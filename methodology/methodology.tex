@@ -1,33 +1,37 @@
-The goal here is to computed the time evolution of the concurrence $C(\rho (t))$ in the lattice 
-\refig{fig:Schematic of the lattice of the spin chain}
-with the Hamiltonian of the XY and DMI.
-For that with have two approch a numerical approch with the language of programmation Python and the 
-analytical approch.
+
+The goal here is to compute the time evolution of the concurrence \( C(\rho(t)) \) in the lattice 
+as shown in \refig{fig:Schematic of the lattice of the spin chain}, 
+with the Hamiltonian of the XY model and DMI.
+To achieve this, we have two approaches: a numerical approach using the Python programming language and an analytical approach.
+
 
 \subsection{Numerical approch}
+To simulate the evolution of the concurrence \refdef{def: concurrence}, we need to compute the 
+density matrix. However, the necessary 
+condition to compute the density matrix \( \rho(t) \) is to find 
+the state of the quantum system at time \( t \). For this purpose, 
+we use the postulate of the evolution of the quantum system given by the Schrödinger equation \cite{cohen-tannoudji_quantum_2019}. 
 
-To simulation the evolution of the concurrence \refdef{def: concurrence} we have to computed the 
-density matrix but the necessery 
-condition to computed the density matrix $\rho(t)$ in to found 
-the state at the time $t$ the quantum system. For that 
-we use the postulat of the evolution of the quantum system the Schrodïnger equation \cite{cohen-tannoudji_quantum_2019}. 
 
-\begin{equation}\label{eq: Schrodïnger eq}
+
+\begin{equation}\label{eq: Schrodinger eq}
     \forall t \in \mathbb{R}_+, \ i \hbar \partial_t \ket{\psi(t)} = \hamil(t) \ket{\psi (t)} 
 \end{equation}
 
-Now let explain a generic algorithm to solve the Schrodïnger equation.
+Now let's explain a generic algorithm to solve the Schrödinger equation.
 
-First let introduce the evolution operator $ \opevolution{t_0}$ which maps $ \ket{\psi(t_0)}$ the inital state of 
-the system into $\ket{\psi(t)} $  
+First, let's introduce the evolution operator \( \mathcal{U}(t, t_0) \) which maps the initial state 
+\( \ket{\psi(t_0)} \) of 
+the system to the state \( \ket{\psi(t)} \) at time \( t \):  
 
 \begin{equation}\label{def : evolution operator}
    \forall t \in \mathbb{R}_+, \ \ketpsit = \opevolution{t_0}  \ket{\psi(t_0)} 
    \text{ with  } \ \opevolution{t_0} \opevolution{t_0}^\dagger = \opevolution{t_0}^\dagger \opevolution{t_0} = \text{id}  
 \end{equation}
 
-where $\text{id}$ is the identity function and $\opevolution{t_0}^\dagger$ is the adjoint of $\opevolution{t_0}$.
-Now we start by considering a Hamiltonian \( \hamil(t) \) which is piecewise constant, i.e.,
+where \( \text{id} \) is the identity operator and \( \mathcal{U}^\dagger(t, t_0) \) is the adjoint of \( \mathcal{U}(t, t_0) \).
+Now, let's consider a Hamiltonian \( \hamil(t) \) which is piecewise constant, i.e.,
+
 
 
 \begin{equation}\label{prop: hypothese Hamiltionan}
@@ -37,8 +41,9 @@ Now we start by considering a Hamiltonian \( \hamil(t) \) which is piecewise con
 where \( t_j \) are time steps at which the Hamiltonian changes suddenly.
 \graphli{0.7}{methodology/constante_H.pdf}{Schematic of the \refprop{prop: hypothese Hamiltionan}}{hypothese Hamiltionan}
 
-But now with the \refprop{prop: hypothese Hamiltionan}, the \refdef{def : evolution operator} and the \myeqref{eq: Schrodïnger eq}
-we can express the $\opevolution{t_0}$ like this :
+With the hypothesis in \refprop{prop: hypothese Hamiltionan}, the evolution operator in \refdef{def : evolution operator}, 
+and the Schrödinger equation in \myeqref{eq: Schrodinger eq}, we can express the evolution operator \( \mathcal{U}(t, t_0) \) as:
+
 
 \begin{equation}
     \opevolution{t_0} = e^{-i \hamil (t-t_0)/\hbar}
@@ -46,7 +51,8 @@ we can express the $\opevolution{t_0}$ like this :
 
 
 
-If we know the state of the quantum system at \( t_0 \), then we can compute the state quantum system at time \( t_n \) with $n > 0$ as:
+With the hypothesis in \refprop{prop: hypothese Hamiltionan}, the evolution operator in \refdef{def : evolution operator}, and the 
+Schrödinger equation in \myeqref{eq: Schrodinger eq}, we can express the evolution operator \( \mathcal{U}(t, t_0) \) as:
 
 \begin{align*}
     \ketpsitime{t_1} &= e^{-i \hamil (t_0) (t_1-t_0)/\hbar} \ketpsitime{t_0} \\
@@ -63,14 +69,14 @@ Let us consider equally spaced time intervals:
 t_j = t_0 + j \Delta t.
 \]
 
-So the state of the quantum system at the time $t_n$ is  :
+Thus, the state of the quantum system at time \( t_n \) is:
 \begin{equation} \label{eq: expression state t_n}
    \forall n \in \mathbb{N}^*, \  \ketpsitime{t_n} = \prod_{i=0}^{n-1} e^{-i \hamil(t_{i}) \Delta t /\hbar} \ketpsitime{t_0}
 \end{equation}
 
 Notice the temporal order of operators \( \mathcal{U}(t_j, t_{j-1}) \) with \( t_j > t_{j-1} \). Operators later in time appear to the left.
 
-So with deduce this algorithm to solve the Schrodïnger equation :
+From this, we can deduce the following algorithm to solve the Schrödinger equation:
 \begin{algorithm}[H]
     \caption{Solve Time-Dependent Schrödinger Equation}
     \begin{algorithmic}[1]
@@ -95,10 +101,11 @@ So with deduce this algorithm to solve the Schrodïnger equation :
 \newpage 
 
 
-Now we can compute the density matrix at the time $t$ but here if the length of the lattice is $L>1$ we can not 
-compute the $C(\rho (t))$ according at the \refdef{def: concurrence} the concurrence in between only two qubits but if $L>1$ 
-we have more of 2 qubits in the lattice so we can't use the  of the concurrence. 
-Let see a example with 3 qubits to solve the problem in the figure :
+Now we can compute the density matrix at time \( t \). However, if the length of the lattice is \( L>1 \), we cannot 
+compute \( C(\rho(t)) \) directly according to the definition of concurrence \refdef{def: concurrence}, which applies to only two qubits. If \( L>1 \), 
+there are more than two qubits in the lattice, so the standard definition of concurrence cannot be used. 
+Let's examine an example with three qubits to understand this problem, as shown in the following figure:
+
 
 \begin{figure}[h!]
     \centering
@@ -128,22 +135,36 @@ Let see a example with 3 qubits to solve the problem in the figure :
 
 
 
-We understand we the \refig{fig:partial_traces} with have to a isolate the pair of the qubit and computed the density matrix of the 
-couple of qubit note $\rho_{ij}$ where $i \neq j \text{ and } (i,j) \in \mathbb{N}^*$, for that we will use a mathematical tool call the partial
-trace \cite{bradley_at_2020} 
+As seen in \ref{fig:partial_traces}, we need to isolate 
+pairs of qubits and compute the density matrix of each pair, denoted as 
+\( \rho_{ij} \) where \( i \neq j \text{ and } (i,j) \in \mathbb{N}^* \). 
+For this, we use a mathematical tool called the partial trace \cite{bradley_at_2020}.
 
-\mydef{Partial trace}{
-Let take a system of $L+1$ quantum system so 
 
-\begin{equation}
-    (i,j) \in (\mathbb{N}^*)^2 \text{ and } i \neq j , \ \rho_{ij} = \sumd{i=1}{\dim(A)} \bra*{e_i} \rho \ket{e_i}
+
+Let $A$ and $B$ be two subsystems making up the composite system described by the density operator 
+$\rho_{AB} \in \mathcal{M}_{2^N}(\mathbb{C})$.
+Let note $\dim(\mathcal{H}_A) = d_A$ and $\dim(\mathcal{H}_B) = d_B$.
+
+The partial trace over the $B$ subsystem, denoted $\text{Tr}_B$, is defined as
+\begin{equation}\label{eq: partial trace}
+\text{Tr}_B[\rho_{AB}] := \sum_j (\id{d_A}{A} \otimes \langle j|_B) \rho_{AB} (\id{d_A}{A} \otimes |j\rangle_B), 
 \end{equation}
+where $\{|j\rangle\}$ is any orthonormal basis for the Hilbert space $\mathcal{H}_B$ of subsystem $B$. 
+We often write $\rho_A \equiv \text{Tr}_B[\rho_{AB}] \in \mathcal{M}_{2^{(N-1)}}(\mathbb{C})$. 
 
-}{}
 
-Let do a example
-For example if we want to compute the density matrix of the system of the qubit (1) and (2) schematic 
-in the \refig{fig:Concurrence between the qubit (1) and (2)} 
+
+
+Similarly, the partial trace over the $A$ subsystem, denoted $\text{Tr}_A$, is defined as
+\begin{equation}
+\text{Tr}_A[\rho_{AB}] := \sum_i (\langle i|_A \otimes \id{d_B}{B}) \rho_{AB} (|i\rangle_A \otimes \id{d_B}{B}), 
+\end{equation}
+where $\{|i\rangle\}$ is any orthonormal basis for the Hilbert space $\mathcal{H}_A$ of subsystem $A$. 
+We often write $\rho_B \equiv \text{Tr}_A[\rho_{AB}] \in \mathcal{M}_{2^{(N-1)}}(\mathbb{C})$.
+
+
+
 
 
 

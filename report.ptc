@@ -1,8 +1,7 @@
 \babel@toc {english}{}\relax 
 \ttl@starttoc {sections@1}
 \contentsline {section}{List of Figures}{IV}{section*.1}%
-\contentsline {section}{List of Tables}{V}{section*.2}%
-\contentsline {section}{Introduction}{1}{section*.2}%
+\contentsline {section}{Introduction}{1}{section*.1}%
 \contentsline {section}{\numberline {1}Theoretical fundamentals}{2}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Quantification of the Entanglement State}{2}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Heisenberg XY model with DM interaction}{3}{subsection.1.2}%
@@ -10,20 +9,17 @@
 \contentsline {subsection}{\numberline {2.1}Numerical approch}{4}{subsection.2.1}%
 \contentsline {section}{\numberline {3}Results And Discussion}{7}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Entanglement in a spin chain with 2 qubits}{7}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Analysis of Concurrence Dynamics}{7}{subsubsection.3.1.1}%
 \contentsline {subsection}{\numberline {3.2}Discussion}{8}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Analytical approch}{10}{subsubsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.3}Entanglement in a spin chain with N qubits}{10}{subsection.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.1}Entanglement in a spin chain with 3 qubits}{10}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Entanglement in a spin chain with 8 qubits}{10}{subsubsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.4}Protocol of accelerating of the entanglement}{10}{subsection.3.4}%
-\contentsline {section}{Conclusion}{11}{subsection.3.4}%
-\contentsline {section}{References}{12}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.3.2}Entanglement in a spin chain with 6 qubits}{12}{subsubsection.3.3.2}%
+\contentsline {section}{Conclusion}{13}{figure.caption.8}%
+\contentsline {section}{References}{15}{Item.4}%
 \ttl@stoptoc {sections@1}
 \ttl@starttoc {sections@2}
-\contentsline {section}{\numberline {A}Appendix First}{i}{appendix.A}%
+\contentsline {section}{\numberline {A}Appendix A}{i}{appendix.A}%
 \contentsline {subsection}{\numberline {A.1}Generalities and Recall on Matrix Series}{i}{subsection.A.1}%
 \contentsline {subsection}{\numberline {A.2}Properties exponential of matrix}{ii}{subsection.A.2}%
-\contentsline {section}{\numberline {B}Appendix Second}{v}{appendix.B}%
+\contentsline {section}{\numberline {B}Appendix B}{v}{appendix.B}%
 \contentsline {subsubsection}{\numberline {B.0.1}Hilbert space reduction}{vi}{subsubsection.B.0.1}%
 \contentsfinish 

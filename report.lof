@@ -1,6 +1,10 @@
 \babel@toc {english}{}\relax 
-\contentsline {figure}{\numberline {1}{\ignorespaces Schematic of the lattice of $L+1$ qubits with the Heisenberg XY model and DMI, where the blue arrows represent the spin states of the qubits, and the gray waves represent the interaction between two neighboring qubits. }}{3}{figure.caption.3}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Schematic of the \hyperref [prop: hypothese Hamiltionan]{Proposition~\ref *{prop: hypothese Hamiltionan}}}}{4}{figure.caption.4}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Problem of calculation of the concurrence for many qubits}}{6}{figure.caption.5}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Schematic of the lattice of $L+1$ qubits with the Heisenberg XY model and DMI, where the blue arrows represent the spin states of the qubits, and the gray waves represent the interaction between two neighboring qubits. }}{3}{figure.caption.2}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Schematic of the \hyperref [prop: hypothese Hamiltionan]{Proposition~\ref *{prop: hypothese Hamiltionan}}}}{4}{figure.caption.3}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Problem of calculation of the concurrence for many qubits}}{6}{figure.caption.4}%
+\contentsline {figure}{\numberline {4}{\ignorespaces \centering $D=0$, Mean Squared Error: 1.51e-07, $\gamma = -1$, $\delta = 1$, $g = 1$, $J = 1$}}{7}{figure.caption.5}%
+\contentsline {figure}{\numberline {5}{\ignorespaces \centering $D=1$, Mean Squared Error: 1.51e-07, $\gamma = -1$, $\delta = 1$, $g = 1$, $J = 1$}}{8}{figure.caption.6}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Concurrence for different values of \( D \) and \( \delta \) with \( \gamma = 1 \). The concurrence values indicate the level of entanglement in the qubit system over time, showing how different parameters influence the entanglement.}}{11}{figure.caption.7}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Concurrence for different values of \( D \) and \( \delta \) with \( \gamma = 1 \) in a 6-qubit system. The plots illustrate how these parameters affect the entanglement within the system over time.}}{13}{figure.caption.8}%
 \contentsfinish 
 \contentsfinish 

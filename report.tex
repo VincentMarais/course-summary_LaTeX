@@ -148,13 +148,13 @@
 
 % Define the total number of pages in Roman and Arabic
 \newcounter{romanpages}
-\setcounter{romanpages}{6} % Set this to the actual number of Roman numeral pages
+\setcounter{romanpages}{4} % Set this to the actual number of Roman numeral pages
 
 \newcounter{arabicpages}
-\setcounter{arabicpages}{20} % Set this to the actual number of Arabic numeral pages
+\setcounter{arabicpages}{15} % Set this to the actual number of Arabic numeral pages
 
 \newcounter{romanpages_2}
-\setcounter{romanpages_2}{20} % Set this to the actual number of Roman numeral pages
+\setcounter{romanpages_2}{8} % Set this to the actual number of Roman numeral pages
 
 % Define Roman page style
 \fancypagestyle{romanstyle}{
@@ -169,7 +169,7 @@
 	\fancyhf{}
 	\renewcommand{\headrulewidth}{0.5pt}
 	\fancyhead[L]{\textbf{Quantum information}}
-	\fancyfoot[L]{\textbf{page \thepage} / \textcolor{blue}{\textbf{\Roman{romanpages_2}}}} % Page number on the left
+	\fancyfoot[L]{\textbf{page \thepage} / \textcolor{blue}{\textbf{\roman{romanpages_2}}}} % Page number on the left
 	\fancyfoot[R]{{Internship USACH - Quantum information}} % Custom text on the right
 }
 % Define Arabic page style
@@ -242,7 +242,7 @@
 
 \section*{Conclusion}
 \addcontentsline{toc}{section}{Conclusion}
-
+\input{conclu/conclu.tex}
 \newpage 
 
 \bibliographystyle{plain}
