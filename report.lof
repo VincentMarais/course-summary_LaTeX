@@ -5,6 +5,6 @@
 \contentsline {figure}{\numberline {4}{\ignorespaces \centering $D=0$, Mean Squared Error: 1.51e-07, $\gamma = -1$, $\delta = 1$, $g = 1$, $J = 1$}}{7}{figure.caption.5}%
 \contentsline {figure}{\numberline {5}{\ignorespaces \centering $D=1$, Mean Squared Error: 1.51e-07, $\gamma = -1$, $\delta = 1$, $g = 1$, $J = 1$}}{8}{figure.caption.6}%
 \contentsline {figure}{\numberline {6}{\ignorespaces Concurrence for different values of \( D \) and \( \delta \) with \( \gamma = 1 \). The concurrence values indicate the level of entanglement in the qubit system over time, showing how different parameters influence the entanglement.}}{11}{figure.caption.7}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Concurrence for different values of \( D \) and \( \delta \) with \( \gamma = 1 \) in a 6-qubit system. The plots illustrate how these parameters affect the entanglement within the system over time.}}{13}{figure.caption.8}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Concurrence for different values of \( D \) and \( \delta \) with \( \gamma = 1 \) in a 6-qubit system. The plots illustrate how these parameters affect the entanglement within the system over time.}}{12}{figure.caption.8}%
 \contentsfinish 
 \contentsfinish 

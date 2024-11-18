@@ -816,12 +816,13 @@ INPUT appendix\exponential_matrices.tex
 INPUT .\appendix\analytical_2qubits.tex
 INPUT .\appendix\analytical_2qubits.tex
 INPUT appendix\analytical_2qubits.tex
-INPUT C:\Users\admin\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplb8t.tfm
-INPUT C:\Users\admin\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplb8t.tfm
 INPUT C:\Users\admin\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\palatino\pplr8t.vf
 INPUT C:\Users\admin\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplr8r.tfm
 INPUT C:\Users\admin\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\palatino\pplr8t.vf
 INPUT C:\Users\admin\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplr8r.tfm
+INPUT .\appendix\pauli_matrices.tex
+INPUT .\appendix\pauli_matrices.tex
+INPUT appendix\pauli_matrices.tex
 OUTPUT report.ptc
 INPUT report.aux
 INPUT .\report.out

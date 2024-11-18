@@ -64,7 +64,7 @@ The coupling constant \(J\) directly contributes to \(\mu\), indicating that a s
 
 \textbf{Maximal Concurrence:}
  The concurrence achieves its maximum value of 1 when \(\sin(2 \mu t) = \pm 1\), indicating a fully entangled state.
- Conversely, \(C(\ket*{\psi(t)}) = 0\) when \(\sin(2 \mu t) = 0\), representing separable states where the qubits are not entangled.
+ Conversely, \(C(\rho(t)) = 0\) when \(\sin(2 \mu t) = 0\), representing separable states where the qubits are not entangled.
 
 \subsection{Discussion}
 
@@ -203,22 +203,7 @@ In the absence of DMI (\(D = 0\)), the system still demonstrates significant ent
 
 \newpage
 \subsubsection{Entanglement in a spin chain with 6 qubits}
-\textbf{Concurrence for \( D = 0, \gamma = 1, \delta = 0 \):} \refig{fig:6q_0_1_0}
-The concurrence values in this configuration range from 0.00 to approximately 0.81, showing a high level of entanglement that gradually decreases as the system evolves over time. The colormap indicates a relatively uniform distribution of entanglement across the bonds in the lattice.
 
-
-\textbf{Concurrence for \( D = 0, \gamma = 1, \delta = 1 \):} \refig{fig:6q_0_1_1}
-When \(\delta\) is increased to 1, the maximum concurrence value decreases slightly to approximately 0.675. The distribution of concurrence values remains similar to the previous case, with the entanglement decreasing over time, but with a slightly reduced maximum entanglement value.
-
-
-\textbf{Concurrence for \( D = 1, \gamma = 1, \delta = 0 \):} \refig{fig:6q_0_1_0}
-Introducing the DMI constant \(D = 1\) while keeping \(\gamma = 1\) and \(\delta = 0\) leads to an increase in the maximum concurrence value to around 0.81. This increase suggests that the DMI enhances the entanglement within the system. The distribution of concurrence is still fairly uniform across the lattice, indicating that the DMI positively influences the overall entanglement.
-
-
-\textbf{Concurrence for \( D = 1, \gamma = 1, \delta = 1 \):} \refig{fig:6q_1_1_1}
-When both \(D\) and \(\delta\) are set to 1, the system exhibits a maximum concurrence value of approximately 0.56, 
-which is lower than when \(\delta = 0\). This suggests that while the DMI increases entanglement, the anisotropy 
-parameter \(\delta\) introduces an effect that reduces the overall entanglement when \(\gamma\) is also present.
 \begin{figure}[h!]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
@@ -254,6 +239,23 @@ parameter \(\delta\) introduces an effect that reduces the overall entanglement 
     \caption{Concurrence for different values of \( D \) and \( \delta \) with \( \gamma = 1 \) in a 6-qubit system. The plots illustrate how these parameters affect the entanglement within the system over time.}
     \label{fig:concurrence_comparison_6qubits}
 \end{figure}
+
+\textbf{Concurrence for \( D = 0, \gamma = 1, \delta = 0 \):} \refig{fig:6q_0_1_0}
+The concurrence values in this configuration range from 0.00 to approximately 0.81, showing a high level of entanglement that gradually decreases as the system evolves over time. The colormap indicates a relatively uniform distribution of entanglement across the bonds in the lattice.
+
+
+\textbf{Concurrence for \( D = 0, \gamma = 1, \delta = 1 \):} \refig{fig:6q_0_1_1}
+When \(\delta\) is increased to 1, the maximum concurrence value decreases slightly to approximately 0.675. The distribution of concurrence values remains similar to the previous case, with the entanglement decreasing over time, but with a slightly reduced maximum entanglement value.
+
+
+\textbf{Concurrence for \( D = 1, \gamma = 1, \delta = 0 \):} \refig{fig:6q_0_1_0}
+Introducing the DMI constant \(D = 1\) while keeping \(\gamma = 1\) and \(\delta = 0\) leads to an increase in the maximum concurrence value to around 0.81. This increase suggests that the DMI enhances the entanglement within the system. The distribution of concurrence is still fairly uniform across the lattice, indicating that the DMI positively influences the overall entanglement.
+
+
+\textbf{Concurrence for \( D = 1, \gamma = 1, \delta = 1 \):} \refig{fig:6q_1_1_1}
+When both \(D\) and \(\delta\) are set to 1, the system exhibits a maximum concurrence value of approximately 0.56, 
+which is lower than when \(\delta = 0\). This suggests that while the DMI increases entanglement, the anisotropy 
+parameter \(\delta\) introduces an effect that reduces the overall entanglement when \(\gamma\) is also present.
 
 
 

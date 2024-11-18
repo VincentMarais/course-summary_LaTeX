@@ -148,20 +148,23 @@ Let note $\dim(\mathcal{H}_A) = d_A$ and $\dim(\mathcal{H}_B) = d_B$.
 
 The partial trace over the $B$ subsystem, denoted $\text{Tr}_B$, is defined as
 \begin{equation}\label{eq: partial trace}
-\text{Tr}_B[\rho_{AB}] := \sum_j (\id{d_A}{A} \otimes \langle j|_B) \rho_{AB} (\id{d_A}{A} \otimes |j\rangle_B), 
+\text{Tr}_B[\rho_{AB}] := \sum_j^{d_B} (\id{d_A}{A} \otimes \langle j|_B) \rho_{AB} (\id{d_A}{A} \otimes |j\rangle_B), 
 \end{equation}
 where $\{|j\rangle\}$ is any orthonormal basis for the Hilbert space $\mathcal{H}_B$ of subsystem $B$. 
-We often write $\rho_A \equiv \text{Tr}_B[\rho_{AB}] \in \mathcal{M}_{2^{(N-1)}}(\mathbb{C})$. 
+We often write $\rho_A \equiv \text{Tr}_B[\rho_{AB}] \in \mathcal{M}_{2^{(N-1)}}(\mathbb{C})$ and $\id{d_A}{A}$ the identity
+matrix size $d_A$. 
 
 
 
 
 Similarly, the partial trace over the $A$ subsystem, denoted $\text{Tr}_A$, is defined as
 \begin{equation}
-\text{Tr}_A[\rho_{AB}] := \sum_i (\langle i|_A \otimes \id{d_B}{B}) \rho_{AB} (|i\rangle_A \otimes \id{d_B}{B}), 
+\text{Tr}_A[\rho_{AB}] := \sum_j^{d_A} (\langle i|_A \otimes \id{d_B}{B}) \rho_{AB} (|i\rangle_A \otimes \id{d_B}{B}), 
 \end{equation}
 where $\{|i\rangle\}$ is any orthonormal basis for the Hilbert space $\mathcal{H}_A$ of subsystem $A$. 
-We often write $\rho_B \equiv \text{Tr}_A[\rho_{AB}] \in \mathcal{M}_{2^{(N-1)}}(\mathbb{C})$.
+We often write $\rho_B \equiv \text{Tr}_A[\rho_{AB}] \in \mathcal{M}_{2^{(N-1)}}(\mathbb{C})$ and $\id{d_A}{A}$ the identity
+matrix size $d_B$. 
+ .
 
 
 

@@ -1,0 +1,69 @@
+
+\mydef{Pauli matrices}{
+The Pauli matrices are a set of three 
+$2 \times 2$ complex matrices which 
+are Hermitian and unitary. 
+They are commonly denoted as $\hat{\sigma}^x$, $\hat{\sigma}^y$, 
+and $\sigma_z$ and are given by:
+$$ \hat{\sigma}^x = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \quad
+\hat{\sigma}^y = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}, \quad
+\hat{\sigma}^z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \quad
+\hat{\sigma}^- = \begin{pmatrix} 0 & 0 \\ 1 & 0\end{pmatrix}, \quad 
+\hat{\sigma}^+ = \begin{pmatrix} 0 & 1 \\ 0 & 0\end{pmatrix}
+$$
+
+}{Pauli matrices}
+\myprop{Pauli Matrix}{
+
+$$
+\hat{\sigma}^x = \hat{\sigma}^+ + \hat{\sigma}^-, \quad
+\hat{\sigma}^y = i(\hat{\sigma}^- - \hat{\sigma}^+), \quad
+\hat{\sigma}^- = \frac{\hat{\sigma}^x - i\hat{\sigma}^y}{2}, \quad 
+\hat{\sigma}^+ = \frac{\hat{\sigma}^x + i\hat{\sigma}^y}{2}
+$$
+
+}{Pauli Matrix}
+\begin{proof}
+	Use the \refdef{def:Pauli matrices} 
+\end{proof}
+
+
+\myprop{Identity Pauli Matrix}{
+\begin{equation*}
+	\hat{\sigma}^y = i \hat{\sigma}^x \hat{\sigma}^z
+\end{equation*}
+}{Identity Pauli Matrix}
+
+
+\begin{proof}
+	Use the  \refdef{def:Pauli matrices} 
+\end{proof}
+
+
+\myprop{Action of Pauli matrices on spin states}{
+    \begin{itemize}
+        \item \( \sigma_x \) flips the spin:
+        \[
+        \sigma_x \ketup = \ketdn, \quad \sigma_x \ketdn = \ketup
+        \]
+        
+        \item \( \sigma_y \) introduces a phase factor \( i \) or \( -i \) and flips the spin:
+        \[
+        \sigma_y \ketup = i\ketdn, \quad \sigma_y \ketdn = -i\ketup
+        \]
+        
+        \item \( \sigma_z \) leaves the spin-up state unchanged and flips the sign of the spin-down state:
+        \[
+        \sigma_z \ketup = \ketup, \quad \sigma_z \ketdn = -\ketdn
+        \]
+    \end{itemize}
+
+    where $ \ketup = \begin{pmatrix}
+        1 \\0
+        \end{pmatrix} $ and $\ketdn = \begin{pmatrix}
+            0 \\1
+            \end{pmatrix} $
+
+
+
+}{Action of Pauli matrices on spin states}
